@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnKindDef ParentName="BaseDroneKind">
+    <defName>Drone_HunterToxic</defName>
+    <label>toxic hunter drone</label>
+    <labelPlural>toxic hunter drones</labelPlural>
+    <race>Drone_HunterToxic</race>
+    <combatPower>75</combatPower>
+    <canOpenDoors>true</canOpenDoors>
+    <canOpenAnyDoor>true</canOpenAnyDoor>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseDroneKind">
+    <defName>Drone_HunterAntigrainWarhead</defName>
+    <label>antigrain warhead hunter drone</label>
+    <labelPlural>antigrain warhead drones</labelPlural>
+    <race>Drone_HunterAntigrainWarhead</race>
+    <combatPower>75</combatPower>
+    <canOpenDoors>true</canOpenDoors>
+    <canOpenAnyDoor>true</canOpenAnyDoor>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseDroneKind">
+    <defName>Drone_HunterIncendiary</defName>
+    <label>incendiary hunter drone</label>
+    <labelPlural>incendiary hunter drones</labelPlural>
+    <race>Drone_HunterIncendiary</race>
+    <combatPower>75</combatPower>
+    <canOpenDoors>true</canOpenDoors>
+    <canOpenAnyDoor>true</canOpenAnyDoor>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseDroneKind">
+    <defName>Drone_HunterEMP</defName>
+    <label>EMP hunter drone</label>
+    <labelPlural>EMP hunter drones</labelPlural>
+    <race>Drone_HunterEMP</race>
+    <combatPower>75</combatPower>
+    <canOpenDoors>true</canOpenDoors>
+    <canOpenAnyDoor>true</canOpenAnyDoor>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseDroneKind">
+    <defName>Drone_HunterSmoke</defName>
+    <label>smoke hunter drone</label>
+    <labelPlural>smoke hunter drones</labelPlural>
+    <race>Drone_HunterSmoke</race>
+    <combatPower>75</combatPower>
+    <canOpenDoors>true</canOpenDoors>
+    <canOpenAnyDoor>true</canOpenAnyDoor>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

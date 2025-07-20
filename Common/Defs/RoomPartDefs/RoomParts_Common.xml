@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- <RoomPart_ThingDef>
+    <defName>HunterDrone</defName>
+    <workerClass>RoomPart_CornerThing</workerClass>
+    <thingDef>HunterDroneTrap</thingDef>
+  </RoomPart_ThingDef> -->
+
+</Defs>

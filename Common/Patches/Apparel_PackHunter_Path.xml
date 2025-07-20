@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps/li[@Class="CompProperties_ApparelVerbOwnerCharged"]/destroyOnEmpty</xpath>
+    <value>
+      <destroyOnEmpty>false</destroyOnEmpty>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps/li[@Class="CompProperties_ApparelVerbOwnerCharged"]/maxCharges</xpath>
+    <value>
+      <maxCharges>1</maxCharges>
+    </value>
+  </Operation>
+
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs/li/verbClass[text()="Verb_LaunchProjectileStaticOneUse"]</xpath>
+    <value>
+      <verbClass>MoreHunterDrones.Verbs.Verb_LaunchProjectileStaticOneUse_alt</verbClass>
+    </value>
+  </Operation>
+
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs</xpath>
+    <value>
+        <li>
+            <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
+            <label>charge</label>
+            <defaultProjectile>Charge_HunterPack</defaultProjectile>
+            <warmupTime>0.0</warmupTime>
+            <range>0.0</range>
+            <burstShotCount>0</burstShotCount>
+            <onlyManualCast>true</onlyManualCast>
+            <hasStandardCommand>true</hasStandardCommand>
+            <targetable>false</targetable>
+            <soundCast>ThrowGrenade</soundCast>
+            <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+            <canGoWild>false</canGoWild>
+        </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps</xpath>
+    <value>
+        <li Class="MoreHunterDrones.Comps.CompProperties_ChargeDronePack">
+          <chargeIngredients>
+            <li>
+              <key>Steel</key>
+              <value>50</value>
+            </li>
+            <li>
+              <key>ComponentIndustrial</key>
+              <value>2</value>
+            </li>
+          </chargeIngredients>
+        </li>
+    </value>
+  </Operation>
+
+</Patch>

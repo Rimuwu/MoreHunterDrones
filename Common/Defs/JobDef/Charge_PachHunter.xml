@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <JobDef>
+     <defName>ChargeDronePack</defName>
+     <driverClass>MoreHunterDrones.Jobs.JobDriver_ChargeDronePack</driverClass>
+     <reportString>Заряжает охотничий дрон</reportString>
+   </JobDef>
+
+</Defs>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseDrone">
+    <defName>Drone_HunterToxic</defName>
+    <label>toxic hunter drone</label>
+    <description>An automated kill drone. The toxic hunter drone pursues its target and detonates when it gets close, releasing a cloud of toxic gas.</description>
+    <statBases>
+      <MoveSpeed>3.4</MoveSpeed>
+    </statBases>
+    <race>
+      <thinkTreeConstant>HunterDroneConstant</thinkTreeConstant>
+      <baseHealthScale>0.35</baseHealthScale>
+      <baseBodySize>0.7</baseBodySize>
+      <hasCorpse>true</hasCorpse>
+      <body>DroneWithThreeLegs</body>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Hunter_Wounded</soundWounded>
+          <soundDeath>Pawn_Hunter_Death</soundDeath>
+          <soundCall>Pawn_Hunter_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>12500</totalPowerTicks> <!-- 5 hours -->
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</tooltipOverride>
+        <showGizmoOnNonPlayerControlled>true</showGizmoOnNonPlayerControlled>
+      </li>
+      <li Class="MoreHunterDrones.Comps.CompProperties_ExplosiveHunterDrone">
+         <explosionRadius>5.9</explosionRadius>
+         <explosionDamageType>ToxGas</explosionDamageType>
+         <postExplosionGasType>ToxGas</postExplosionGasType>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>15</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseDrone">
+    <defName>Drone_HunterAntigrainWarhead</defName>
+    <label>antigrain warhead hunter drone</label>
+    <description>An automated kill drone. The antigrain warhead drone pursues its target and detonates when it gets close, releasing a cloud of antigrain warhead.</description>
+    <statBases>
+      <MoveSpeed>2.4</MoveSpeed>
+    </statBases>
+    <race>
+      <thinkTreeConstant>HunterDroneConstant</thinkTreeConstant>
+      <baseHealthScale>0.35</baseHealthScale>
+      <baseBodySize>0.7</baseBodySize>
+      <hasCorpse>true</hasCorpse>
+      <body>DroneWithThreeLegs</body>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Hunter_Wounded</soundWounded>
+          <soundDeath>Pawn_Hunter_Death</soundDeath>
+          <soundCall>Pawn_Hunter_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>12500</totalPowerTicks> <!-- 5 hours -->
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</tooltipOverride>
+        <showGizmoOnNonPlayerControlled>true</showGizmoOnNonPlayerControlled>
+      </li>
+      <li Class="MoreHunterDrones.Comps.CompProperties_ExplosiveHunterDrone">
+        <explosionRadius>14.9</explosionRadius>
+        <explosionDamageType>BombSuper</explosionDamageType>
+        <chanceToStartFire>0.22</chanceToStartFire>
+        <damageFalloff>true</damageFalloff>
+        <explosionSound>Explosion_GiantBomb</explosionSound>
+        <preExplosionSpawnSingleThingDef>CraterMedium</preExplosionSpawnSingleThingDef>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>15</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseDrone">
+    <defName>Drone_HunterIncendiary</defName>
+    <label>incendiary hunter drone</label>
+    <description>An automated kill drone. The incendiary hunter drone pursues its target and detonates when it gets close, releasing a cloud of incendiary gas.</description>
+    <statBases>
+      <MoveSpeed>3.4</MoveSpeed>
+    </statBases>
+    <race>
+      <thinkTreeConstant>HunterDroneConstant</thinkTreeConstant>
+      <baseHealthScale>0.35</baseHealthScale>
+      <baseBodySize>0.7</baseBodySize>
+      <hasCorpse>true</hasCorpse>
+      <body>DroneWithThreeLegs</body>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Hunter_Wounded</soundWounded>
+          <soundDeath>Pawn_Hunter_Death</soundDeath>
+          <soundCall>Pawn_Hunter_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>12500</totalPowerTicks> <!-- 5 hours -->
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</tooltipOverride>
+        <showGizmoOnNonPlayerControlled>true</showGizmoOnNonPlayerControlled>
+      </li>
+      <li Class="MoreHunterDrones.Comps.CompProperties_ExplosiveHunterDrone">
+        <explosionRadius>3.9</explosionRadius>
+        <explosionDamageType>Flame</explosionDamageType>
+        <chanceToStartFire>0.2</chanceToStartFire>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>15</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseDrone">
+    <defName>Drone_HunterEMP</defName>
+    <label>EMP hunter drone</label>
+    <description>An automated kill drone. The EMP hunter drone pursues its target and detonates when it gets close, releasing a pulse that disables electronics.</description>
+    <statBases>
+      <MoveSpeed>3.4</MoveSpeed>
+    </statBases>
+    <race>
+      <thinkTreeConstant>HunterDroneConstant</thinkTreeConstant>
+      <baseHealthScale>0.35</baseHealthScale>
+      <baseBodySize>0.7</baseBodySize>
+      <hasCorpse>true</hasCorpse>
+      <body>DroneWithThreeLegs</body>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Hunter_Wounded</soundWounded>
+          <soundDeath>Pawn_Hunter_Death</soundDeath>
+          <soundCall>Pawn_Hunter_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>12500</totalPowerTicks> <!-- 5 hours -->
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</tooltipOverride>
+        <showGizmoOnNonPlayerControlled>true</showGizmoOnNonPlayerControlled>
+      </li>
+      <li Class="MoreHunterDrones.Comps.CompProperties_ExplosiveHunterDrone">
+        <explosionRadius>10.9</explosionRadius>
+        <explosionDamageType>EMP</explosionDamageType>
+        <chanceToStartFire>0.2</chanceToStartFire>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>15</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseDrone">
+    <defName>Drone_HunterSmoke</defName>
+    <label>smoke hunter drone</label>
+    <description>An automated kill drone. The smoke hunter drone pursues its target and detonates when it gets close, releasing a cloud of smoke that obscures vision.</description>
+    <statBases>
+      <MoveSpeed>4.4</MoveSpeed>
+    </statBases>
+    <race>
+      <thinkTreeConstant>HunterDroneConstant</thinkTreeConstant>
+      <baseHealthScale>0.35</baseHealthScale>
+      <baseBodySize>0.7</baseBodySize>
+      <hasCorpse>true</hasCorpse>
+      <body>DroneWithThreeLegs</body>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Hunter_Wounded</soundWounded>
+          <soundDeath>Pawn_Hunter_Death</soundDeath>
+          <soundCall>Pawn_Hunter_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>12500</totalPowerTicks> <!-- 5 hours -->
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</tooltipOverride>
+        <showGizmoOnNonPlayerControlled>true</showGizmoOnNonPlayerControlled>
+      </li>
+      <li Class="MoreHunterDrones.Comps.CompProperties_ExplosiveHunterDrone">
+        <explosionRadius>8.6</explosionRadius>
+        <explosionDamageType>Smoke</explosionDamageType>
+        <chanceToStartFire>0.2</chanceToStartFire>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>15</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+</Defs>
