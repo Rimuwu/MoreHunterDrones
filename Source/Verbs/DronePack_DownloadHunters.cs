@@ -23,7 +23,7 @@ namespace MoreHunterDrones.Verbs
 
             if (charges > 0) 
             {
-                Messages.Message("Ханетр пак заряжнен!", MessageTypeDefOf.RejectInput, false);
+                Messages.Message("MoreHunterDrones_PackAlreadyCharged".Translate(), MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 
@@ -52,7 +52,7 @@ namespace MoreHunterDrones.Verbs
 
             if (currentMass + totalMass > carryCapacity)
             {
-                Messages.Message("Поселенец не может поднять все необходимые ингредиенты - слишком тяжело!", MessageTypeDefOf.RejectInput, false);
+                Messages.Message("MoreHunterDrones_InsufficientIngredients".Translate(), MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 
@@ -73,16 +73,15 @@ namespace MoreHunterDrones.Verbs
             if (chargeComp == null)
             {
                 Log.Error("[ChargeDronePack] CompChargeDronePack not found");
-                Messages.Message("Компонент зарядки не найден!", MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 
             // Проверить возможность зарядки
             bool canStart = chargeComp.CanStartChargeProcess(pawn);
-            
+
             if (!canStart)
             {
-                Messages.Message("Поселенец не может подобрать все необходимые предметы для создания нового охотника.", MessageTypeDefOf.RejectInput, false);
+                Messages.Message("MoreHunterDrones_CannotCollectItems".Translate(), MessageTypeDefOf.RejectInput, false);
                 return false;
             }
 

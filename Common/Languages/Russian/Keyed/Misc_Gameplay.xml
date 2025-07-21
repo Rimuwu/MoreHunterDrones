@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<MoreHunterDrones_NoCharged>
-        Вы не можете сейчас использовать данный предмет, так как у него нет зарядов. Загрузите новых дронов охотников для работы.
-    </MoreHunterDrones_NoCharged>
+    <MoreHunterDrones_NoCharged>Вы не можете использовать этот предмет сейчас, так как у него нет зарядов. Зарядите рюкзак для использования.</MoreHunterDrones_NoCharged>
+
+    <MoreHunterDrones_IsCharged>Рюкзак заряжен и готов к использованию.</MoreHunterDrones_IsCharged>
+
+    <MoreHunterDrones_ChargeIngredientsDesc>Необходимые ингредиенты для зарядки рюкзака:</MoreHunterDrones_ChargeIngredientsDesc>
+
+    <MoreHunterDrones_VerbChargeDesc>Создание нового дрона внутри рюкзака для повторного использования.</MoreHunterDrones_VerbChargeDesc>
+
+    <MoreHunterDrones_SuccessMessage>Дрон успешно создан внутри рюкзака.</MoreHunterDrones_SuccessMessage>
+
+    <MoreHunterDrones_JobReportString>Зарядка охотничьего дрон-пакета</MoreHunterDrones_JobReportString>
+    <MoreHunterDrones_PackAlreadyCharged>Рюкзак уже заряжен и готов к использованию.</MoreHunterDrones_PackAlreadyCharged>
+    <MoreHunterDrones_InsufficientIngredients>Колонист не может нести все необходимые ингредиенты — это слишком тяжело!</MoreHunterDrones_InsufficientIngredients>
+    <MoreHunterDrones_CannotCollectItems>Колонист не может собрать все необходимые предметы для создания нового охотника.</MoreHunterDrones_CannotCollectItems>
 
 </LanguageData>

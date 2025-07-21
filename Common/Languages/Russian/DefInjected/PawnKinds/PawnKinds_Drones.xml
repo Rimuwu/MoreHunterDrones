@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <Drone_HunterToxic.label>токсичный охотничий дрон</Drone_HunterToxic.label>
+    <Drone_HunterToxic.labelPlural>токсичные охотничьи дроны</Drone_HunterToxic.labelPlural>
+
+    <Drone_HunterAntigrainWarhead.label>антизерновый охотничий дрон</Drone_HunterAntigrainWarhead.label>
+    <Drone_HunterAntigrainWarhead.labelPlural>антизерновые охотничьи дроны</Drone_HunterAntigrainWarhead.labelPlural>
+
+    <Drone_HunterIncendiary.label>зажигательный охотничий дрон</Drone_HunterIncendiary.label>
+    <Drone_HunterIncendiary.labelPlural>зажигательные охотничьи дроны</Drone_HunterIncendiary.labelPlural>
+
+    <Drone_HunterEMP.label>ЭМИ охотничий дрон</Drone_HunterEMP.label>
+    <Drone_HunterEMP.labelPlural>ЭМИ охотничьи дроны</Drone_HunterEMP.labelPlural>
+
+    <Drone_HunterSmoke.label>дымовой охотничий дрон</Drone_HunterSmoke.label>
+    <Drone_HunterSmoke.labelPlural>дымовые охотничьи дроны</Drone_HunterSmoke.labelPlural>
+
+</LanguageData>

@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<MoreHunterDrones_NoCharged>
-        You cannot use this item now, as it has no charges. Download new Hunter drones for work.
-    </MoreHunterDrones_NoCharged>
+	<MoreHunterDrones_NoCharged>You cannot use this item now, as it has no charges. Charge your backpack for use.</MoreHunterDrones_NoCharged>
+
+    <MoreHunterDrones_IsCharged>Backpack is charged and ready to use.</MoreHunterDrones_IsCharged>
+
+    <MoreHunterDrones_ChargeIngredientsDesc>Ingredients required to charge the backpack:</MoreHunterDrones_ChargeIngredientsDesc>
+
+    <MoreHunterDrones_VerbChargeDesc>Creating a new drone inside the backpack for reuse.</MoreHunterDrones_VerbChargeDesc>
+
+    <MoreHunterDrones_SuccessMessage>Drone successfully created inside the backpack.</MoreHunterDrones_SuccessMessage>
+
+    <MoreHunterDrones_JobReportString>Charging the hunter drone pack</MoreHunterDrones_JobReportString>
+    <MoreHunterDrones_PackAlreadyCharged>Backpack is already charged and ready to use.</MoreHunterDrones_PackAlreadyCharged>
+    <MoreHunterDrones_InsufficientIngredients>"The settler can't carry all the necessary ingredients - it's too heavy!"</MoreHunterDrones_InsufficientIngredients>
+    <MoreHunterDrones_CannotCollectItems>The settler cannot collect all the necessary items to create a new hunter.</MoreHunterDrones_CannotCollectItems>
 
 </LanguageData>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <CompProperties_MechPowerCell.labelOverride>Заряд батареи</CompProperties_MechPowerCell.labelOverride>
+    <CompProperties_MechPowerCell.tooltipOverride>У дронов ограниченное время работы от батареи. Когда заряд батареи заканчивается, дрон отключается.</CompProperties_MechPowerCell.tooltipOverride>
+
+</LanguageData>

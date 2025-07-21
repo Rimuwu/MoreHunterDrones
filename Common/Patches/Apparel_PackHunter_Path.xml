@@ -2,24 +2,9 @@
 <Patch>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps/li[@Class="MoreHunterDrones.Comps.CompProperties_ApparelIsCharged"]/destroyOnEmpty</xpath>
-    <value>
-      <destroyOnEmpty>false</destroyOnEmpty>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps/li[@Class="MoreHunterDrones.Comps.CompProperties_ApparelIsCharged"]/maxCharges</xpath>
-    <value>
-      <maxCharges>1</maxCharges>
-    </value>
-  </Operation>
-
-
-  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs/li/verbClass[text()="Verb_LaunchProjectileStaticOneUse"]</xpath>
     <value>
-      <verbClass>MoreHunterDrones.Verbs.Verb_LaunchProjectileStaticOneUse_alt</verbClass>
+      <verbClass>MoreHunterDrones.Verbs.Verb_LaunchDrone</verbClass>
     </value>
   </Operation>
 
@@ -29,30 +14,39 @@
     <value>
         <li>
             <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
-            <label>charge</label>
+            <label>charge pack</label>
             <onlyManualCast>true</onlyManualCast>
             <hasStandardCommand>true</hasStandardCommand>
             <targetable>false</targetable>
-            <warmupTime>-1.0</warmupTime>
+            <!-- <commandIcon>Textures/RechargePack</commandIcon> -->
+            <defaultCooldownTime>120</defaultCooldownTime>
         </li>
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
+  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps</xpath>
     <value>
-        <li Class="MoreHunterDrones.Comps.CompProperties_ChargeDronePack">
-          <chargeIngredients>
-            <li>
-              <key>Steel</key>
-              <value>50</value>
-            </li>
-            <li>
-              <key>ComponentIndustrial</key>
-              <value>2</value>
-            </li>
-          </chargeIngredients>
+      <comps>
+        <li Class="MoreHunterDrones.Comps.CompProperties_ApparelIsCharged">
+            <hotKey>Misc4</hotKey>
+            <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+            <maxCharges>1</maxCharges>
+            <destroyOnEmpty>false</destroyOnEmpty>
         </li>
+        <li Class="MoreHunterDrones.Comps.CompProperties_ChargeDronePack">
+            <chargeIngredients>
+              <li>
+                <key>Steel</key>
+                <value>50</value>
+              </li>
+              <li>
+                <key>ComponentIndustrial</key>
+                <value>2</value>
+              </li>
+            </chargeIngredients>
+        </li>
+      </comps>
     </value>
   </Operation>
 

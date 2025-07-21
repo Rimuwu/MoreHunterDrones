@@ -10,7 +10,7 @@ using static UnityEngine.GraphicsBuffer;
 
 namespace MoreHunterDrones.Verbs
 {
-    public class Verb_LaunchProjectileStaticOneUse_alt : Verb_LaunchProjectileStatic
+    public class Verb_LaunchDrone : Verb_LaunchProjectileStatic
     {
         CompApparelVerbOwner_Charged CompApparelVerbOwner => (CompApparelVerbOwner_Charged)base.EquipmentSource.TryGetComp<CompApparelVerbOwner_Charged>();
 

@@ -17,7 +17,7 @@ namespace MoreHunterDrones.Jobs
 
         public override string GetReport()
         {
-            return "Заряжает охотничий дрон";
+            return "MoreHunterDrones_JobReportString".Translate();
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -38,7 +38,7 @@ namespace MoreHunterDrones.Jobs
                         JumpToToil(waitToil); // Переходим к ожиданию
                         return;
                     }
-                    
+
                     if (!FindNextIngredientTarget())
                     {
                         EndJobWith(JobCondition.Incompletable);

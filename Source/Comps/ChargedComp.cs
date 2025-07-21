@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using MoreHunterDrones.Verbs;
+using MoreHunterDrones.Comps;
 
 namespace MoreHunterDrones.Comps
 {
@@ -42,7 +44,7 @@ namespace MoreHunterDrones.Comps
 
         public override string CompInspectStringExtra()
         {
-            return "ChargesRemaining".Translate(Props.ChargeNounArgument) + ": " + LabelRemaining;
+            return "ChargesRemaining".Translate(Props.ChargeNounArgument) + ": " + LabelRemaining + " 1111";
         }
 
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
@@ -70,10 +72,48 @@ namespace MoreHunterDrones.Comps
 
         public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
         {
+            // Показываем ВСЕ кнопки вербов - пусть каждый верб сам решает через Available()
             foreach (Gizmo item in base.CompGetWornGizmosExtra())
             {
+
+                if (item is Command_VerbTarget verbCommand)
+                {
+                    // Если это кнопка верба зарядки, добавляем информацию об ингредиентах
+                    if (verbCommand.verb is Verb_ChargeDronePack chargeVerb)
+                    {
+                        // Получаем компонент зарядки для информации об ингредиентах
+                        var chargeComp = parent.TryGetComp<CompChargeDronePack>();
+                        if (chargeComp?.ChargeIngredients != null && chargeComp.ChargeIngredients.Count > 0)
+                        {
+                            // Добавляем описание ингредиентов к существующему tooltip
+                            string originalDesc = "MoreHunterDrones_VerbChargeDesc".Translate(Props.ChargeNounArgument);
+                            string ingredientsDesc = GetIngredientsDescription(chargeComp);
+
+                            verbCommand.defaultDesc = string.IsNullOrEmpty(originalDesc)
+                                ? ingredientsDesc
+                                : originalDesc + "\n" + ingredientsDesc;
+
+                            if (RemainingCharges > 0)
+                            {
+                                verbCommand.Disable();
+                                verbCommand.disabledReason = "MoreHunterDrones_IsCharged".Translate(Props.ChargeNounArgument);
+                            }
+
+                        }
+                    } if (verbCommand.verb is Verb_LaunchDrone launcVerb)
+                    {
+                        if (RemainingCharges < 0)
+                        {
+                            verbCommand.Disable();
+                            verbCommand.disabledReason = "MoreHunterDrones_NoCharged".Translate(Props.ChargeNounArgument);
+                        }
+                    }
+                }
+
                 yield return item;
             }
+
+            // Дебаг кнопка для разработки
             if (DebugSettings.ShowDevGizmos)
             {
                 Command_Action command_Action = new Command_Action();
@@ -84,6 +124,20 @@ namespace MoreHunterDrones.Comps
                 };
                 yield return command_Action;
             }
+        }
+
+        private string GetIngredientsDescription(CompChargeDronePack chargeComp)
+        {
+            var sb = new StringBuilder();
+            string add_text = "MoreHunterDrones_ChargeIngredientsDesc".Translate(Props.ChargeNounArgument);
+            sb.AppendLine(add_text);
+            
+            foreach (var pair in chargeComp.ChargeIngredients)
+            {
+                sb.AppendLine($"• {pair.Key.LabelCap}: {pair.Value}");
+            }
+            
+            return sb.ToString().TrimEnd();
         }
 
         public override string CompTipStringExtra()

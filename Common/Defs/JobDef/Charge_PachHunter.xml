@@ -4,7 +4,7 @@
     <JobDef>
      <defName>ChargeDronePack</defName>
      <driverClass>MoreHunterDrones.Jobs.JobDriver_ChargeDronePack</driverClass>
-     <reportString>Заряжает охотничий дрон</reportString>
+     <reportString>Charging the hunter drone pack</reportString>
    </JobDef>
 
 </Defs>

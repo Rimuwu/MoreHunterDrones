@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <!-- Токсичный дрон -->
+    <Drone_HunterToxic.label>токсичный охотничий дрон</Drone_HunterToxic.label>
+    <Drone_HunterToxic.description>Автоматизированный дрон-убийца. Токсичный охотничий дрон преследует свою цель и детонирует при приближении, высвобождая облако токсичного газа.</Drone_HunterToxic.description>
+    
+    <!-- Антизерновый дрон -->
+    <Drone_HunterAntigrainWarhead.label>антизерновый охотничий дрон</Drone_HunterAntigrainWarhead.label>
+    <Drone_HunterAntigrainWarhead.description>Автоматизированный дрон-убийца. Антизерновый охотничий дрон преследует свою цель и детонирует при приближении, вызывая мощнейший взрыв.</Drone_HunterAntigrainWarhead.description>
+    
+    <!-- Зажигательный дрон -->
+    <Drone_HunterIncendiary.label>зажигательный охотничий дрон</Drone_HunterIncendiary.label>
+    <Drone_HunterIncendiary.description>Автоматизированный дрон-убийца. Зажигательный охотничий дрон преследует свою цель и детонирует при приближении, высвобождая облако воспламеняющегося газа.</Drone_HunterIncendiary.description>
+    
+    <!-- ЭМИ дрон -->
+    <Drone_HunterEMP.label>ЭМИ охотничий дрон</Drone_HunterEMP.label>
+    <Drone_HunterEMP.description>Автоматизированный дрон-убийца. ЭМИ охотничий дрон преследует свою цель и детонирует при приближении, высвобождая импульс, отключающий электронику.</Drone_HunterEMP.description>
+    
+    <!-- Дымовой дрон -->
+    <Drone_HunterSmoke.label>дымовой охотничий дрон</Drone_HunterSmoke.label>
+    <Drone_HunterSmoke.description>Автоматизированный дрон-убийца. Дымовой охотничий дрон преследует свою цель и детонирует при приближении, высвобождая облако дыма, затрудняющее видимость.</Drone_HunterSmoke.description>
+</LanguageData>

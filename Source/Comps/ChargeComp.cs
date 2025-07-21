@@ -88,7 +88,6 @@ namespace MoreHunterDrones.Comps
                 if (inInventory < needed)
                 {
                     Log.Error($"[ChargeDronePack] Missing ingredient {pair.Key.defName}: needed {needed}, have {inInventory}");
-                    Messages.Message("Ошибка: не хватает ингредиентов для зарядки!", MessageTypeDefOf.RejectInput, false);
                     return;
                 }
             }
@@ -111,21 +110,25 @@ namespace MoreHunterDrones.Comps
                 if (toRemove > 0)
                 {
                     Log.Error($"[ChargeDronePack] Could not remove all {pair.Key.defName}: {toRemove} still needed");
+                    return;
                 }
             }
 
             // Добавление заряда (если есть компонент заряжаемого)
             var chargedComp = parent.TryGetComp<CompApparelVerbOwner_Charged>();
-            
+
             if (chargedComp != null)
             {
                 // Пробуем привести к нашему наследнику
                 var reloadableComp = chargedComp as CompApparelVerbOwner_ChargedReloadable;
+                string successMessage = "MoreHunterDrones_SuccessMessage".Translate();
+
                 if (reloadableComp != null)
                 {
                     // Используем публичный метод
                     reloadableComp.AddCharge(1);
-                    Messages.Message("Заряд добавлен!", MessageTypeDefOf.PositiveEvent, false);
+
+                    Messages.Message(successMessage, MessageTypeDefOf.PositiveEvent, false);
                 }
                 else
                 {
@@ -137,17 +140,18 @@ namespace MoreHunterDrones.Comps
                     {
                         int currentCharges = (int)chargesField.GetValue(chargedComp);
                         chargesField.SetValue(chargedComp, currentCharges + 1);
-                        Messages.Message("Заряд добавлен!", MessageTypeDefOf.PositiveEvent, false);
+
+                        Messages.Message(successMessage, MessageTypeDefOf.PositiveEvent, false);
                     }
                     else
                     {
-                        Log.Warning("[ChargeDronePack] Could not access remainingCharges field via reflection");
+                        Log.Error("[ChargeDronePack] Could not access remainingCharges field via reflection");
                     }
                 }
             }
             else
             {
-                Log.Warning("[ChargeDronePack] ChargedComp not found - cannot add charge");
+                Log.Error("[ChargeDronePack] ChargedComp not found - cannot add charge");
             }
         }
     }
