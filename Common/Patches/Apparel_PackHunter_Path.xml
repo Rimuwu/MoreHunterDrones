@@ -2,14 +2,14 @@
 <Patch>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps/li[@Class="CompProperties_ApparelVerbOwnerCharged"]/destroyOnEmpty</xpath>
+    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps/li[@Class="MoreHunterDrones.Comps.CompProperties_ApparelIsCharged"]/destroyOnEmpty</xpath>
     <value>
       <destroyOnEmpty>false</destroyOnEmpty>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps/li[@Class="CompProperties_ApparelVerbOwnerCharged"]/maxCharges</xpath>
+    <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps/li[@Class="MoreHunterDrones.Comps.CompProperties_ApparelIsCharged"]/maxCharges</xpath>
     <value>
       <maxCharges>1</maxCharges>
     </value>
@@ -30,16 +30,10 @@
         <li>
             <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
             <label>charge</label>
-            <defaultProjectile>Charge_HunterPack</defaultProjectile>
-            <warmupTime>0.0</warmupTime>
-            <range>0.0</range>
-            <burstShotCount>0</burstShotCount>
             <onlyManualCast>true</onlyManualCast>
             <hasStandardCommand>true</hasStandardCommand>
             <targetable>false</targetable>
-            <soundCast>ThrowGrenade</soundCast>
-            <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
-            <canGoWild>false</canGoWild>
+            <warmupTime>-1.0</warmupTime>
         </li>
     </value>
   </Operation>

@@ -7,6 +7,7 @@ using MoreHunterDrones.Jobs;
 
 namespace MoreHunterDrones.Comps
 {
+
     public class CompProperties_ChargeDronePack : CompProperties
     {
         public Dictionary<ThingDef, int> chargeIngredients = new Dictionary<ThingDef, int>();
@@ -14,15 +15,6 @@ namespace MoreHunterDrones.Comps
         public CompProperties_ChargeDronePack()
         {
             compClass = typeof(CompChargeDronePack);
-        }
-    }
-
-    // Наследник CompApparelVerbOwner_Charged с возможностью добавления зарядов
-    public class CompApparelVerbOwner_ChargedReloadable : CompApparelVerbOwner_Charged
-    {
-        public void AddCharge(int amount = 1)
-        {
-            remainingCharges = System.Math.Min(remainingCharges + amount, MaxCharges);
         }
     }
 
@@ -35,7 +27,7 @@ namespace MoreHunterDrones.Comps
         {
             if (ChargeIngredients == null || ChargeIngredients.Count == 0)
             {
-                Log.Warning("[ChargeDronePack] ChargeIngredients is null or empty");
+                Log.Error("[ChargeDronePack] ChargeIngredients is null or empty");
                 return false;
             }
 
@@ -59,7 +51,6 @@ namespace MoreHunterDrones.Comps
                 
                 if (found < needed) 
                 {
-                    Log.Warning($"[ChargeDronePack] Not enough {pair.Key.defName}: needed {needed}, found {found}");
                     return false;
                 }
             }
@@ -71,9 +62,9 @@ namespace MoreHunterDrones.Comps
         {
             // Запускаем работу по сбору ингредиентов и зарядке
             var job = new Job(MyJobDefOf.ChargeDronePack, parent);
-            
+
             bool jobStarted = pawn.jobs.TryTakeOrderedJob(job);
-            
+
             if (!jobStarted)
             {
                 Log.Warning("[ChargeDronePack] Failed to start charge job");
@@ -119,7 +110,7 @@ namespace MoreHunterDrones.Comps
                 
                 if (toRemove > 0)
                 {
-                    Log.Warning($"[ChargeDronePack] Could not remove all {pair.Key.defName}: {toRemove} still needed");
+                    Log.Error($"[ChargeDronePack] Could not remove all {pair.Key.defName}: {toRemove} still needed");
                 }
             }
 
@@ -132,7 +123,7 @@ namespace MoreHunterDrones.Comps
                 var reloadableComp = chargedComp as CompApparelVerbOwner_ChargedReloadable;
                 if (reloadableComp != null)
                 {
-                    // Используем наш публичный метод
+                    // Используем публичный метод
                     reloadableComp.AddCharge(1);
                     Messages.Message("Заряд добавлен!", MessageTypeDefOf.PositiveEvent, false);
                 }
