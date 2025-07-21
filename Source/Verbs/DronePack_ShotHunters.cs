@@ -10,10 +10,8 @@ using static UnityEngine.GraphicsBuffer;
 
 namespace MoreHunterDrones.Verbs
 {
-
     public class Verb_LaunchProjectileStaticOneUse_alt : Verb_LaunchProjectileStatic
     {
-
         CompApparelVerbOwner_Charged CompApparelVerbOwner => (CompApparelVerbOwner_Charged)base.EquipmentSource.TryGetComp<CompApparelVerbOwner_Charged>();
 
         public override bool Available()
@@ -30,11 +28,9 @@ namespace MoreHunterDrones.Verbs
             return canUse;
         }
 
-
         protected override bool TryCastShot()
         {
             // Проверка, можно ли произвести выстрел 1 раз, после нажатия
-
             if (base.TryCastShot())
             {
                 if (burstShotsLeft <= 1)
@@ -52,7 +48,6 @@ namespace MoreHunterDrones.Verbs
 
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
-
             // Проверка, можно ли выбрать цель для атаки (каждый тик) (до вызова OnGUI)
 
             if (!base.ValidateTarget(target, showMessages: true))
@@ -68,7 +63,6 @@ namespace MoreHunterDrones.Verbs
 
         public override void OnGUI(LocalTargetInfo target)
         {
-
             // Вызывается каждый тик при нажатии кнопки и выборе цели
 
             Map currentMap = Find.CurrentMap;
@@ -79,7 +73,6 @@ namespace MoreHunterDrones.Verbs
             Texture2D UIIcon = (target.Cell.InBounds(currentMap) ? (canAttack ? TexCommand.Attack : TexCommand.CannotShoot) : TexCommand.CannotShoot);
             GenUI.DrawMouseAttachment(UIIcon);
         }
-
         public override void Notify_EquipmentLost()
         {
             // Вроде как, если отменено, но не смог воспроиести
@@ -90,7 +83,6 @@ namespace MoreHunterDrones.Verbs
                 SelfConsume();
             }
         }
-
         public void SelfConsume()
         {
             // Конец выполнения действия
@@ -102,10 +94,8 @@ namespace MoreHunterDrones.Verbs
             }
 
         }
-
         public override void OrderForceTarget(LocalTargetInfo target)
         {
-
             // Вызывается при выборе цели для атаки (нажата клавиша лкм)
 
             Job job = JobMaker.MakeJob(JobDefOf.UseVerbOnThingStaticReserve, target);

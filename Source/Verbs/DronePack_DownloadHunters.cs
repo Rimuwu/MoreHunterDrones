@@ -13,7 +13,7 @@ using MoreHunterDrones.Jobs;
 
 namespace MoreHunterDrones.Verbs
 {
-    public class Verb_ChargeDronePack : Verb_LaunchProjectileStatic
+    public class Verb_ChargeDronePack : Verb
     {
         public CompApparelVerbOwner_Charged CompApparelVerbOwner => (CompApparelVerbOwner_Charged)base.EquipmentSource.TryGetComp<CompApparelVerbOwner_Charged>();
 
