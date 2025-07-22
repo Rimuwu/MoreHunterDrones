@@ -4,9 +4,9 @@
     <Drone_HunterToxic_Trap.label>токсичная охотничья ловушка</Drone_HunterToxic_Trap.label>
     <Drone_HunterToxic_Trap.description>Спящий токсичный охотничий дрон, активирующийся при обнаружении угрозы. Токсичный охотничий дрон приближается к цели и детонирует, высвобождая облако токсичного газа. Поскольку он спрятан в окружающей местности, его нельзя размещать рядом с другими ловушками.</Drone_HunterToxic_Trap.description>
 
-    <!-- Антизерновая ловушка -->
-    <Drone_HunterAntigrainWarhead_Trap.label>антизерновая охотничья ловушка</Drone_HunterAntigrainWarhead_Trap.label>
-    <Drone_HunterAntigrainWarhead_Trap.description>Спящий антизерновый охотничий дрон, активирующийся при обнаружении угрозы. Антизерновый охотничий дрон приближается к цели и детонирует, вызывая мощнейший взрыв. Поскольку он спрятан в окружающей местности, его нельзя размещать рядом с другими ловушками.</Drone_HunterAntigrainWarhead_Trap.description>
+    <!-- Грануальная ловушка -->
+    <Drone_HunterAntigrainWarhead_Trap.label>грануальная охотничья ловушка</Drone_HunterAntigrainWarhead_Trap.label>
+    <Drone_HunterAntigrainWarhead_Trap.description>Спящий грануальный охотничий дрон, активирующийся при обнаружении угрозы. Грануальный охотничий дрон приближается к цели и детонирует, вызывая мощнейший взрыв. Поскольку он спрятан в окружающей местности, его нельзя размещать рядом с другими ловушками.</Drone_HunterAntigrainWarhead_Trap.description>
 
     <!-- Зажигательная ловушка -->
     <Drone_HunterIncendiary_Trap.label>зажигательная охотничья ловушка</Drone_HunterIncendiary_Trap.label>
