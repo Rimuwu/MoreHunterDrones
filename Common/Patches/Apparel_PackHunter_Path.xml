@@ -18,7 +18,7 @@
             <onlyManualCast>true</onlyManualCast>
             <hasStandardCommand>true</hasStandardCommand>
             <targetable>false</targetable>
-            <!-- <commandIcon>Textures/RechargePack</commandIcon> -->
+            <commandIcon>UI/ChargePack</commandIcon>
             <defaultCooldownTime>120</defaultCooldownTime>
         </li>
     </value>
