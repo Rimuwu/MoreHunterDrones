@@ -75,7 +75,7 @@
       <li Class="MoreHunterDrones.Comps.CompProperties_ExplosiveHunterDrone">
         <explosionRadius>14.9</explosionRadius>
         <explosionDamageType>BombSuper</explosionDamageType>
-        <chanceToStartFire>0.22</chanceToStartFire>
+        <chanceToStartFire>0.12</chanceToStartFire>
         <damageFalloff>true</damageFalloff>
         <explosionSound>Explosion_GiantBomb</explosionSound>
         <preExplosionSpawnSingleThingDef>CraterMedium</preExplosionSpawnSingleThingDef>
@@ -160,7 +160,7 @@
       <li Class="MoreHunterDrones.Comps.CompProperties_ExplosiveHunterDrone">
         <explosionRadius>10.9</explosionRadius>
         <explosionDamageType>EMP</explosionDamageType>
-        <chanceToStartFire>0.2</chanceToStartFire>
+        <chanceToStartFire>0.1</chanceToStartFire>
       </li>
     </comps>
     <butcherProducts>
@@ -201,7 +201,7 @@
       <li Class="MoreHunterDrones.Comps.CompProperties_ExplosiveHunterDrone">
         <explosionRadius>8.6</explosionRadius>
         <explosionDamageType>Smoke</explosionDamageType>
-        <chanceToStartFire>0.2</chanceToStartFire>
+        <chanceToStartFire>0</chanceToStartFire>
       </li>
     </comps>
     <butcherProducts>
