@@ -47,7 +47,7 @@
     <label>antigrain warhead hunter drone</label>
     <description>An automated kill drone. The antigrain warhead drone pursues its target and detonates when it gets close, releasing a cloud of antigrain warhead.</description>
     <statBases>
-      <MoveSpeed>2.4</MoveSpeed>
+      <MoveSpeed>2.0</MoveSpeed>
     </statBases>
     <race>
       <thinkTreeConstant>HunterDroneConstant</thinkTreeConstant>
