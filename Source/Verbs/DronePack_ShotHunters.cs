@@ -75,7 +75,7 @@ namespace MoreHunterDrones.Verbs
         }
         public override void Notify_EquipmentLost()
         {
-            // Вроде как, если отменено, но не смог воспроиести
+            // Вроде как, если отменено, но не смог воспроизвести
 
             base.Notify_EquipmentLost();
             if (state == VerbState.Bursting && burstShotsLeft < base.BurstShotCount)

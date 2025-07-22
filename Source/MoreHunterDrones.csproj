@@ -41,7 +41,6 @@
     <None Include="..\Common\Defs\PawnKinds\PawnKinds_Drones.xml" />
     <None Include="..\Common\Defs\RoomPartDefs\RoomParts_Common.xml" />
     <None Include="..\Common\Defs\ThingDefs_Buildings\Buildings_Security.xml" />
-    <None Include="..\Common\Defs\ThingDefs_Races\Drone_Projectile.xml" />
     <None Include="..\Common\Defs\ThingDefs_Races\Races_Drones.xml" />
     <None Include="..\Common\Languages\**" />
     <Reference Include="UnityEngine">
