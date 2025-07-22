@@ -13,7 +13,7 @@
     <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
     <drawerType>RealtimeOnly</drawerType>
     <graphicData>
-      <texPath>Things/Building/HunterTrap</texPath>
+      <texPath>Building/Drone_HunterToxic_Trap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
         <rect>(0,0,1,0.15)</rect>
@@ -80,7 +80,7 @@
     <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
     <drawerType>RealtimeOnly</drawerType>
     <graphicData>
-      <texPath>Things/Building/HunterTrap</texPath>
+      <texPath>Building/Drone_HunterAntigrainWarhead_Trap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
         <rect>(0,0,1,0.15)</rect>
@@ -148,7 +148,7 @@
     <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
     <drawerType>RealtimeOnly</drawerType>
     <graphicData>
-      <texPath>Things/Building/HunterTrap</texPath>
+      <texPath>Building/Drone_HunterIncendiary_Trap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
         <rect>(0,0,1,0.15)</rect>
@@ -214,7 +214,7 @@
     <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
     <drawerType>RealtimeOnly</drawerType>
     <graphicData>
-      <texPath>Things/Building/HunterTrap</texPath>
+      <texPath>Building/Drone_HunterEMP_Trap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
         <rect>(0,0,1,0.15)</rect>
@@ -280,7 +280,7 @@
     <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
     <drawerType>RealtimeOnly</drawerType>
     <graphicData>
-      <texPath>Things/Building/HunterTrap</texPath>
+      <texPath>Building/Drone_HunterSmoke_Trap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
         <rect>(0,0,1,0.15)</rect>
