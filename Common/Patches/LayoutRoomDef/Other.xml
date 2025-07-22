@@ -7,10 +7,10 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/LayoutRoomDef[defName="AncientRuinsFrozenChemfuelWorkshop"]/parts</xpath>
     <value>
-      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
-      <HunterDroneToxic>0.3</HunterDroneToxic>
-      <HunterDroneSmoke>0.3</HunterDroneSmoke>
-      <HunterDroneEMP>0.2</HunterDroneEMP>
+      <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
+      <HunterDroneToxic>0.27</HunterDroneToxic>
+      <HunterDroneSmoke>0.27</HunterDroneSmoke>
+      <HunterDroneEMP>0.25</HunterDroneEMP>
     </value>
   </Operation>
 
@@ -18,10 +18,10 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/LayoutRoomDef[defName="AncientRuinsFrozenLab"]/parts</xpath>
     <value>
-      <HunterDroneToxic>0.6</HunterDroneToxic>
-      <HunterDroneEMP>0.5</HunterDroneEMP>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
-      <HunterDroneIncendiary>0.3</HunterDroneIncendiary>
+      <HunterDroneToxic>0.32</HunterDroneToxic>
+      <HunterDroneEMP>0.3</HunterDroneEMP>
+      <HunterDroneSmoke>0.28</HunterDroneSmoke>
+      <HunterDroneIncendiary>0.16</HunterDroneIncendiary>
     </value>
   </Operation>
 
@@ -29,10 +29,10 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/LayoutRoomDef[defName="AncientRuinsFrozenGravliteStoreRoom"]/parts</xpath>
     <value>
-      <HunterDroneEMP>0.6</HunterDroneEMP>
-      <HunterDroneToxic>0.4</HunterDroneToxic>
-      <HunterDroneSmoke>0.3</HunterDroneSmoke>
-      <HunterDroneAntigrainWarhead>0.3</HunterDroneAntigrainWarhead>
+      <HunterDroneEMP>0.22</HunterDroneEMP>
+      <HunterDroneToxic>0.18</HunterDroneToxic>
+      <HunterDroneSmoke>0.46</HunterDroneSmoke>
+      <HunterDroneAntigrainWarhead>0.16</HunterDroneAntigrainWarhead>
     </value>
   </Operation>
 
@@ -40,11 +40,11 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/LayoutRoomDef[defName="AncientRuinsTerraformer"]/parts</xpath>
     <value>
-      <HunterDroneToxic>0.8</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.6</HunterDroneAntigrainWarhead>
-      <HunterDroneEMP>0.7</HunterDroneEMP>
-      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
-      <HunterDroneSmoke>0.5</HunterDroneSmoke>
+      <HunterDroneToxic>0.16</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.12</HunterDroneAntigrainWarhead>
+      <HunterDroneEMP>0.14</HunterDroneEMP>
+      <HunterDroneIncendiary>0.12</HunterDroneIncendiary>
+      <HunterDroneSmoke>0.1</HunterDroneSmoke>
     </value>
   </Operation>
 
@@ -54,11 +54,11 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/LayoutRoomDef[defName="AncientRuinsReactorGravliteStoreRoom"]/parts</xpath>
     <value>
-      <HunterDroneEMP>0.7</HunterDroneEMP>
-      <HunterDroneToxic>0.6</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.5</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      <HunterDroneEMP>0.14</HunterDroneEMP>
+      <HunterDroneToxic>0.12</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.1</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
+      <HunterDroneSmoke>0.08</HunterDroneSmoke>
     </value>
   </Operation>
 
@@ -68,10 +68,10 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/LayoutRoomDef[defName="AncientWorkshop"]/parts</xpath>
     <value>
-      <HunterDroneEMP>0.4</HunterDroneEMP>
-      <HunterDroneSmoke>0.3</HunterDroneSmoke>
-      <HunterDroneToxic>0.2</HunterDroneToxic>
-      <HunterDroneIncendiary>0.2</HunterDroneIncendiary>
+      <HunterDroneEMP>0.08</HunterDroneEMP>
+      <HunterDroneSmoke>0.06</HunterDroneSmoke>
+      <HunterDroneToxic>0.04</HunterDroneToxic>
+      <HunterDroneIncendiary>0.04</HunterDroneIncendiary>
     </value>
   </Operation>
 
@@ -79,11 +79,11 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/LayoutRoomDef[defName="AncientGarrisonShellStorageRoom"]/parts</xpath>
     <value>
-      <HunterDroneAntigrainWarhead>0.7</HunterDroneAntigrainWarhead>
-      <HunterDroneToxic>0.6</HunterDroneToxic>
-      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
-      <HunterDroneEMP>0.5</HunterDroneEMP>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      <HunterDroneAntigrainWarhead>0.14</HunterDroneAntigrainWarhead>
+      <HunterDroneToxic>0.12</HunterDroneToxic>
+      <HunterDroneIncendiary>0.12</HunterDroneIncendiary>
+      <HunterDroneEMP>0.1</HunterDroneEMP>
+      <HunterDroneSmoke>0.08</HunterDroneSmoke>
     </value>
   </Operation>
 

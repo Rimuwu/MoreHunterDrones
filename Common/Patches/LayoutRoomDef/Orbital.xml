@@ -5,143 +5,143 @@
   
   <!-- OrbitalItemStash_ItemRoom - уже содержит дроны, добавляем новые -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="OrbitalItemStash_ItemRoom"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.6</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.4</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
-      <HunterDroneEMP>0.5</HunterDroneEMP>
-      <HunterDroneSmoke>0.3</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="OrbitalItemStash_ItemRoom"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.15</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.08</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
+          <HunterDroneEMP>0.1</HunterDroneEMP>
+          <HunterDroneSmoke>0.07</HunterDroneSmoke>
+      </value>
   </Operation>
 
 
   <!-- MechStorageRoom - добавляем части для дронов -->
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/LayoutRoomDef[defName="MechStorageRoom"]/parts</xpath>
-    <value>
-      <parts>
-        <HunterDroneToxic>0.7</HunterDroneToxic>
-        <HunterDroneAntigrainWarhead>0.5</HunterDroneAntigrainWarhead>
-        <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
-        <HunterDroneEMP>0.8</HunterDroneEMP>
-        <HunterDroneSmoke>0.4</HunterDroneSmoke>
-      </parts>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="MechStorageRoom"]/parts</xpath>
+      <value>
+          <parts>
+              <HunterDroneToxic>0.18</HunterDroneToxic>
+              <HunterDroneAntigrainWarhead>0.1</HunterDroneAntigrainWarhead>
+              <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
+              <HunterDroneEMP>0.2</HunterDroneEMP>
+              <HunterDroneSmoke>0.08</HunterDroneSmoke>
+          </parts>
+      </value>
   </Operation>
 
   <!-- MechProcessorRoom - добавляем части для дронов -->
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/LayoutRoomDef[defName="MechProcessorRoom"]/parts</xpath>
-    <value>
-      <parts>
-        <HunterDroneToxic>0.7</HunterDroneToxic>
-        <HunterDroneAntigrainWarhead>0.5</HunterDroneAntigrainWarhead>
-        <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
-        <HunterDroneEMP>0.8</HunterDroneEMP>
-        <HunterDroneSmoke>0.4</HunterDroneSmoke>
-      </parts>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="MechProcessorRoom"]/parts</xpath>
+      <value>
+          <parts>
+              <HunterDroneToxic>0.18</HunterDroneToxic>
+              <HunterDroneAntigrainWarhead>0.1</HunterDroneAntigrainWarhead>
+              <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
+              <HunterDroneEMP>0.2</HunterDroneEMP>
+              <HunterDroneSmoke>0.08</HunterDroneSmoke>
+          </parts>
+      </value>
   </Operation>
 
   <!-- Орбитальные комнаты -->
 
   <!-- OrbitalStoreroom - орбитальный склад -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="OrbitalStoreroom"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.5</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.3</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.4</HunterDroneIncendiary>
-      <HunterDroneEMP>0.5</HunterDroneEMP>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="OrbitalStoreroom"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.12</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.07</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
+          <HunterDroneEMP>0.12</HunterDroneEMP>
+          <HunterDroneSmoke>0.08</HunterDroneSmoke>
+      </value>
   </Operation>
 
   <!-- OrbitalStoreroom_GravshipUpgrade - склад улучшений гравшипов -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="OrbitalStoreroom_GravshipUpgrade"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.6</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.5</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
-      <HunterDroneEMP>0.7</HunterDroneEMP>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="OrbitalStoreroom_GravshipUpgrade"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.15</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.12</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.12</HunterDroneIncendiary>
+          <HunterDroneEMP>0.18</HunterDroneEMP>
+          <HunterDroneSmoke>0.08</HunterDroneSmoke>
+      </value>
   </Operation>
 
   <!-- OrbitalStoreroom_Loot - орбитальный склад с лутом -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="OrbitalStoreroom_Loot"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.5</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.3</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.4</HunterDroneIncendiary>
-      <HunterDroneEMP>0.5</HunterDroneEMP>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="OrbitalStoreroom_Loot"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.12</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.07</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
+          <HunterDroneEMP>0.12</HunterDroneEMP>
+          <HunterDroneSmoke>0.08</HunterDroneSmoke>
+      </value>
   </Operation>
 
   <!-- OrbitalComputerRoom - орбитальная компьютерная комната -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="OrbitalComputerRoom"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.4</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.2</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.3</HunterDroneIncendiary>
-      <HunterDroneEMP>0.6</HunterDroneEMP>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="OrbitalComputerRoom"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.08</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.04</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.07</HunterDroneIncendiary>
+          <HunterDroneEMP>0.12</HunterDroneEMP>
+          <HunterDroneSmoke>0.08</HunterDroneSmoke>
+      </value>
   </Operation>
 
   <!-- Спутниковые комнаты -->
 
   <!-- AncientSatelliteEquipmentBlockRoom - комната оборудования спутника -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="AncientSatelliteEquipmentBlockRoom"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.6</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.4</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
-      <HunterDroneEMP>0.7</HunterDroneEMP>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="AncientSatelliteEquipmentBlockRoom"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.15</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.08</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
+          <HunterDroneEMP>0.18</HunterDroneEMP>
+          <HunterDroneSmoke>0.08</HunterDroneSmoke>
+      </value>
   </Operation>
 
   <!-- AncientSatelliteVentRoom - вентиляционная комната спутника -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="AncientSatelliteVentRoom"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.5</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.3</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.4</HunterDroneIncendiary>
-      <HunterDroneEMP>0.6</HunterDroneEMP>
-      <HunterDroneSmoke>0.5</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="AncientSatelliteVentRoom"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.12</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.07</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
+          <HunterDroneEMP>0.15</HunterDroneEMP>
+          <HunterDroneSmoke>0.1</HunterDroneSmoke>
+      </value>
   </Operation>
 
   <!-- AncientSatelliteLootRoom - комната лута спутника -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="AncientSatelliteLootRoom"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.6</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.4</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
-      <HunterDroneEMP>0.6</HunterDroneEMP>
-      <HunterDroneSmoke>0.4</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="AncientSatelliteLootRoom"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.15</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.08</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
+          <HunterDroneEMP>0.15</HunterDroneEMP>
+          <HunterDroneSmoke>0.08</HunterDroneSmoke>
+      </value>
   </Operation>
 
   <!-- AncientSatelliteSecondaryLootRoom - вторичная комната лута спутника -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/LayoutRoomDef[defName="AncientSatelliteSecondaryLootRoom"]/parts</xpath>
-    <value>
-      <HunterDroneToxic>0.4</HunterDroneToxic>
-      <HunterDroneAntigrainWarhead>0.2</HunterDroneAntigrainWarhead>
-      <HunterDroneIncendiary>0.3</HunterDroneIncendiary>
-      <HunterDroneEMP>0.4</HunterDroneEMP>
-      <HunterDroneSmoke>0.3</HunterDroneSmoke>
-    </value>
+      <xpath>Defs/LayoutRoomDef[defName="AncientSatelliteSecondaryLootRoom"]/parts</xpath>
+      <value>
+          <HunterDroneToxic>0.08</HunterDroneToxic>
+          <HunterDroneAntigrainWarhead>0.04</HunterDroneAntigrainWarhead>
+          <HunterDroneIncendiary>0.07</HunterDroneIncendiary>
+          <HunterDroneEMP>0.08</HunterDroneEMP>
+          <HunterDroneSmoke>0.07</HunterDroneSmoke>
+      </value>
   </Operation>
 
 </Patch>
