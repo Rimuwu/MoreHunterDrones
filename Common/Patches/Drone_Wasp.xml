@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="WaspDroneTrap"]</xpath>
+    <value>
+      <costList>
+        <Steel>35</Steel>
+        <ComponentIndustrial>2</ComponentIndustrial>
+        <Neutroamine>5</Neutroamine>
+      </costList>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="WaspDroneTrap"]</xpath>
+    <value>
+      <designationCategory>Security</designationCategory>
+      <designationHotKey>Misc7</designationHotKey>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="WaspDroneTrap"]</xpath>
+    <value>
+      <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+      <researchPrerequisites>
+        <li>HunterDrones</li>
+      </researchPrerequisites>
+    </value>
+  </Operation>
+
+  <!-- Добавление системы батареи для осиных дронов -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Drone_Wasp"]</xpath>
+    <value>
+      <comps>
+        <li Class="CompProperties_MechPowerCell">
+          <totalPowerTicks>12500</totalPowerTicks> <!-- 5 часов -->
+          <labelOverride>Battery power</labelOverride>
+          <tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</tooltipOverride>
+          <showGizmoOnNonPlayerControlled>true</showGizmoOnNonPlayerControlled>
+        </li>
+      </comps>
+    </value>
+  </Operation>
+
+</Patch>
