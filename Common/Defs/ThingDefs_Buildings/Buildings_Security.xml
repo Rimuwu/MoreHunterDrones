@@ -167,6 +167,7 @@
       <Steel>30</Steel>
       <Chemfuel>60</Chemfuel>
       <ComponentIndustrial>1</ComponentIndustrial>
+      <Shell_Incendiary>2</Shell_Incendiary>
     </costList>
     <statBases>
       <Mass>10</Mass>
@@ -233,6 +234,7 @@
       <Steel>35</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
       <Chemfuel>50</Chemfuel>
+      <Shell_EMP>2</Shell_EMP>
     </costList>
     <statBases>
       <Mass>10</Mass>
@@ -299,6 +301,7 @@
       <Steel>25</Steel>
       <Chemfuel>30</Chemfuel>
       <ComponentIndustrial>1</ComponentIndustrial>
+      <Shell_Smoke>2</Shell_Smoke>
     </costList>
     <statBases>
       <Mass>10</Mass>
