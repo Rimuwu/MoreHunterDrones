@@ -12,7 +12,7 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <texPath>Pawns/Drone_HunterToxic/Drone_HunterToxic</texPath>
           <drawSize>1.2</drawSize>
         </bodyGraphicData>
       </li>
@@ -30,7 +30,7 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <texPath>Pawns/Drone_HunterAntigrainWarhead/Drone_HunterAntigrainWarhead</texPath>
           <drawSize>1.2</drawSize>
         </bodyGraphicData>
       </li>
@@ -48,7 +48,7 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <texPath>Pawns/Drone_HunterIncendiary/Drone_HunterIncendiary</texPath>
           <drawSize>1.2</drawSize>
         </bodyGraphicData>
       </li>
@@ -66,7 +66,7 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <texPath>Pawns/Drone_HunterEMP/Drone_HunterEMP</texPath>
           <drawSize>1.2</drawSize>
         </bodyGraphicData>
       </li>
@@ -84,7 +84,7 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Drone/Hunter/HunterDrone</texPath>
+          <texPath>Pawns/Drone_HunterSmoke/Drone_HunterSmoke</texPath>
           <drawSize>1.2</drawSize>
         </bodyGraphicData>
       </li>
