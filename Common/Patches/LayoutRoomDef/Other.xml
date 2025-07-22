@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+<!-- Замороженные локации -->
+
+  <!-- AncientRuinsFrozenChemfuelWorkshop - замороженная химмастерская -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsFrozenChemfuelWorkshop"]/parts</xpath>
+    <value>
+      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
+      <HunterDroneToxic>0.3</HunterDroneToxic>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+      <HunterDroneEMP>0.2</HunterDroneEMP>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsFrozenLab - замороженная лаборатория -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsFrozenLab"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.6</HunterDroneToxic>
+      <HunterDroneEMP>0.5</HunterDroneEMP>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      <HunterDroneIncendiary>0.3</HunterDroneIncendiary>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsFrozenGravliteStoreRoom - склад гравлита -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsFrozenGravliteStoreRoom"]/parts</xpath>
+    <value>
+      <HunterDroneEMP>0.6</HunterDroneEMP>
+      <HunterDroneToxic>0.4</HunterDroneToxic>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+      <HunterDroneAntigrainWarhead>0.3</HunterDroneAntigrainWarhead>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsTerraformer - терраформер -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsTerraformer"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.8</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.6</HunterDroneAntigrainWarhead>
+      <HunterDroneEMP>0.7</HunterDroneEMP>
+      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
+      <HunterDroneSmoke>0.5</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- Реакторные комнаты -->
+
+  <!-- AncientRuinsReactorGravliteStoreRoom - склад гравлита реактора -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsReactorGravliteStoreRoom"]/parts</xpath>
+    <value>
+      <HunterDroneEMP>0.7</HunterDroneEMP>
+      <HunterDroneToxic>0.6</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.5</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- Гарнизонные помещения -->
+
+  <!-- AncientWorkshop - древняя мастерская -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientWorkshop"]/parts</xpath>
+    <value>
+      <HunterDroneEMP>0.4</HunterDroneEMP>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+      <HunterDroneToxic>0.2</HunterDroneToxic>
+      <HunterDroneIncendiary>0.2</HunterDroneIncendiary>
+    </value>
+  </Operation>
+
+  <!-- AncientGarrisonShellStorageRoom - склад снарядов гарнизона -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientGarrisonShellStorageRoom"]/parts</xpath>
+    <value>
+      <HunterDroneAntigrainWarhead>0.7</HunterDroneAntigrainWarhead>
+      <HunterDroneToxic>0.6</HunterDroneToxic>
+      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
+      <HunterDroneEMP>0.5</HunterDroneEMP>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+</Patch>

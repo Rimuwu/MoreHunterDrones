@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Высокие шансы для угрожающих/военных локаций -->
+
+  <!-- AncientStockpileStockpile - уже содержит HunterDrone и WaspDrone, добавляем новые -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientStockpileStockpile"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.6</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.4</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
+      <HunterDroneEMP>0.5</HunterDroneEMP>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsReactor - уже содержит дроны, добавляем новые -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsReactor"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.8</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.6</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.7</HunterDroneIncendiary>
+      <HunterDroneEMP>0.7</HunterDroneEMP>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- AncientEngineRoom - уже содержит WaspDrone, добавляем новые -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientEngineRoom"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.7</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.5</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
+      <HunterDroneEMP>0.6</HunterDroneEMP>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- Средние шансы для обычных руин -->
+
+  <!-- AncientComputerRoom - добавляем части для дронов -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/LayoutRoomDef[defName="AncientComputerRoom"]/parts</xpath>
+    <value>
+      <parts>
+        <HunterDroneEMP>0.6</HunterDroneEMP>
+        <HunterDroneSmoke>0.4</HunterDroneSmoke>
+        <HunterDroneToxic>0.3</HunterDroneToxic>
+        <HunterDroneIncendiary>0.3</HunterDroneIncendiary>
+      </parts>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsSecureRoom - добавляем части для дронов -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsSecureRoom"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.5</HunterDroneToxic>
+      <HunterDroneEMP>0.5</HunterDroneEMP>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      <HunterDroneIncendiary>0.4</HunterDroneIncendiary>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsShelfRoomWithLoot - добавляем части для дронов -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsShelfRoomWithLoot"]/parts</xpath>
+    <value>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+      <HunterDroneEMP>0.3</HunterDroneEMP>
+      <HunterDroneToxic>0.2</HunterDroneToxic>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsShelfWithLootRoom - добавляем части для дронов -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsShelfWithLootRoom"]/parts</xpath>
+    <value>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+      <HunterDroneEMP>0.3</HunterDroneEMP>
+      <HunterDroneToxic>0.2</HunterDroneToxic>
+    </value>
+  </Operation>
+
+  <!-- AncientWeaponStorage - добавляем части для дронов -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientWeaponStorage"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.6</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.4</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
+      <HunterDroneEMP>0.5</HunterDroneEMP>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- Низкие шансы для жилых зон -->
+
+  <!-- AncientRuinsBarracks - добавляем части для дронов -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsBarracks"]/fillInterior</xpath>
+    <value>
+      <fillInterior>
+        <AncientBed>
+          <roomsPerHundredCells>8</roomsPerHundredCells>
+          <alignWithRect>true</alignWithRect>
+        </AncientBed>
+      </fillInterior>
+      <parts>
+        <HunterDroneSmoke>0.2</HunterDroneSmoke>
+        <HunterDroneEMP>0.1</HunterDroneEMP>
+      </parts>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsDiningHall - добавляем части для дронов -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsDiningHall"]</xpath>
+    <value>
+      <parts>
+        <HunterDroneSmoke>0.1</HunterDroneSmoke>
+        <HunterDroneToxic>0.1</HunterDroneToxic>
+      </parts>
+    </value>
+  </Operation>
+
+  <!-- Специальные локации с уникальными настройками -->
+
+  <!-- AncientChemfuelRefineryExplosivesRoom - взрывчатые дроны -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientChemfuelRefineryExplosivesRoom"]/parts</xpath>
+    <value>
+      <HunterDroneAntigrainWarhead>0.7</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.8</HunterDroneIncendiary>
+      <HunterDroneToxic>0.4</HunterDroneToxic>
+      <HunterDroneSmoke>0.5</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- AncientChemfuelRefineryProductionRoom - промышленные дроны -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientChemfuelRefineryProductionRoom"]/parts</xpath>
+    <value>
+      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
+      <HunterDroneToxic>0.5</HunterDroneToxic>
+      <HunterDroneEMP>0.4</HunterDroneEMP>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- AncientWarehouseStorageRoom - складские дроны -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientWarehouseStorageRoom"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.5</HunterDroneToxic>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      <HunterDroneEMP>0.3</HunterDroneEMP>
+      <HunterDroneIncendiary>0.3</HunterDroneIncendiary>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsReactorCorridor - реакторный коридор с высокими шансами -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsReactorCorridor"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.7</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.5</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
+      <HunterDroneEMP>0.6</HunterDroneEMP>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsShelfWithLootRoom_Underground - подземный склад -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsShelfWithLootRoom_Underground"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.4</HunterDroneToxic>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+      <HunterDroneEMP>0.3</HunterDroneEMP>
+      <HunterDroneIncendiary>0.2</HunterDroneIncendiary>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsChemfuelWorkshop - химическая мастерская -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsChemfuelWorkshop"]/parts</xpath>
+    <value>
+      <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
+      <HunterDroneToxic>0.4</HunterDroneToxic>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      <HunterDroneEMP>0.3</HunterDroneEMP>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsChemfuelBarrelRoom - склад химтоплива -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsChemfuelBarrelRoom"]/parts</xpath>
+    <value>
+      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
+      <HunterDroneToxic>0.3</HunterDroneToxic>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      <HunterDroneEMP>0.2</HunterDroneEMP>
+    </value>
+  </Operation>
+
+  <!-- AncientChemfuelStorage - хранилище химтоплива -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientChemfuelStorage"]/parts</xpath>
+    <value>
+      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
+      <HunterDroneToxic>0.3</HunterDroneToxic>
+      <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      <HunterDroneEMP>0.2</HunterDroneEMP>
+    </value>
+  </Operation>
+
+  <!-- AncientRuinsReactorCorpseRoom - комната трупов реактора -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientRuinsReactorCorpseRoom"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.8</HunterDroneToxic>
+      <HunterDroneAntigrainWarhead>0.4</HunterDroneAntigrainWarhead>
+      <HunterDroneIncendiary>0.5</HunterDroneIncendiary>
+      <HunterDroneSmoke>0.5</HunterDroneSmoke>
+    </value>
+  </Operation>
+
+  <!-- AncientChemfuelRefineryWorkshop - мастерская НПЗ -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientChemfuelRefineryWorkshop"]/parts</xpath>
+    <value>
+      <HunterDroneIncendiary>0.4</HunterDroneIncendiary>
+      <HunterDroneToxic>0.3</HunterDroneToxic>
+      <HunterDroneSmoke>0.3</HunterDroneSmoke>
+      <HunterDroneEMP>0.2</HunterDroneEMP>
+    </value>
+  </Operation>
+
+  <!-- AncientWarehousePalletRoom - склад поддонов -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutRoomDef[defName="AncientWarehousePalletRoom"]/parts</xpath>
+    <value>
+      <HunterDroneToxic>0.4</HunterDroneToxic>
+      <HunterDroneSmoke>0.5</HunterDroneSmoke>
+      <HunterDroneEMP>0.3</HunterDroneEMP>
+      <HunterDroneIncendiary>0.2</HunterDroneIncendiary>
+    </value>
+  </Operation>
+
+  <!-- AncientStockpileSecurityRoom - комната безопасности склада -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/LayoutRoomDef[defName="AncientStockpileSecurityRoom"]/parts</xpath>
+    <value>
+      <parts>
+        <HunterDroneToxic>0.7</HunterDroneToxic>
+        <HunterDroneAntigrainWarhead>0.5</HunterDroneAntigrainWarhead>
+        <HunterDroneIncendiary>0.6</HunterDroneIncendiary>
+        <HunterDroneEMP>0.7</HunterDroneEMP>
+        <HunterDroneSmoke>0.4</HunterDroneSmoke>
+      </parts>
+    </value>
+  </Operation>
+
+</Patch>
