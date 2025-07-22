@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
+
     <!-- Токсичный дрон -->
-    <Drone_HunterToxic.label>токсичный охотничий дрон</Drone_HunterToxic.label>
+    <Drone_HunterToxic.label>токсичный-охотник</Drone_HunterToxic.label>
     <Drone_HunterToxic.description>Автоматизированный дрон-убийца. Токсичный охотничий дрон преследует свою цель и детонирует при приближении, высвобождая облако токсичного газа.</Drone_HunterToxic.description>
-    
+    <Drone_HunterToxic.comps.CompMechPowerCell.labelOverride>Аккумулятор</Drone_HunterToxic.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterToxic.comps.CompMechPowerCell.tooltipOverride>Дроны имеют ограниченный срок службы аккумулятора. Когда аккумулятор разряжается, дрон отключается.</Drone_HunterToxic.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterToxic.tools.shell_spike.label>бронешип</Drone_HunterToxic.tools.shell_spike.label>
+
     <!-- Антизерновый дрон -->
     <Drone_HunterAntigrainWarhead.label>антизерновый охотничий дрон</Drone_HunterAntigrainWarhead.label>
     <Drone_HunterAntigrainWarhead.description>Автоматизированный дрон-убийца. Антизерновый охотничий дрон преследует свою цель и детонирует при приближении, вызывая мощнейший взрыв.</Drone_HunterAntigrainWarhead.description>
+    <Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.labelOverride>Аккумулятор</Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.tooltipOverride>Дроны имеют ограниченный срок службы аккумулятора. Когда аккумулятор разряжается, дрон отключается.</Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterAntigrainWarhead.tools.shell_spike.label>бронешип</Drone_HunterAntigrainWarhead.tools.shell_spike.label>
     
     <!-- Зажигательный дрон -->
     <Drone_HunterIncendiary.label>зажигательный охотничий дрон</Drone_HunterIncendiary.label>
     <Drone_HunterIncendiary.description>Автоматизированный дрон-убийца. Зажигательный охотничий дрон преследует свою цель и детонирует при приближении, высвобождая облако воспламеняющегося газа.</Drone_HunterIncendiary.description>
+    <Drone_HunterIncendiary.comps.CompMechPowerCell.labelOverride>Аккумулятор</Drone_HunterIncendiary.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterIncendiary.comps.CompMechPowerCell.tooltipOverride>Дроны имеют ограниченный срок службы аккумулятора. Когда аккумулятор разряжается, дрон отключается.</Drone_HunterIncendiary.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterIncendiary.tools.shell_spike.label>бронешип</Drone_HunterIncendiary.tools.shell_spike.label>
     
     <!-- ЭМИ дрон -->
     <Drone_HunterEMP.label>ЭМИ охотничий дрон</Drone_HunterEMP.label>
     <Drone_HunterEMP.description>Автоматизированный дрон-убийца. ЭМИ охотничий дрон преследует свою цель и детонирует при приближении, высвобождая импульс, отключающий электронику.</Drone_HunterEMP.description>
+    <Drone_HunterSmoke.comps.CompMechPowerCell.labelOverride>Аккумулятор</Drone_HunterSmoke.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterSmoke.comps.CompMechPowerCell.tooltipOverride>Дроны имеют ограниченный срок службы аккумулятора. Когда аккумулятор разряжается, дрон отключается.</Drone_HunterSmoke.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterSmoke.tools.shell_spike.label>бронешип</Drone_HunterSmoke.tools.shell_spike.label>
     
     <!-- Дымовой дрон -->
     <Drone_HunterSmoke.label>дымовой охотничий дрон</Drone_HunterSmoke.label>
     <Drone_HunterSmoke.description>Автоматизированный дрон-убийца. Дымовой охотничий дрон преследует свою цель и детонирует при приближении, высвобождая облако дыма, затрудняющее видимость.</Drone_HunterSmoke.description>
+    <Drone_HunterSmoke.comps.CompMechPowerCell.labelOverride>Аккумулятор</Drone_HunterSmoke.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterSmoke.comps.CompMechPowerCell.tooltipOverride>Дроны имеют ограниченный срок службы аккумулятора. Когда аккумулятор разряжается, дрон отключается.</Drone_HunterSmoke.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterSmoke.tools.shell_spike.label>бронешип</Drone_HunterSmoke.tools.shell_spike.label>
+
 </LanguageData>
