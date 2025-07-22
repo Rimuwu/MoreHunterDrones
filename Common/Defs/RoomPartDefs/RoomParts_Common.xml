@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- <RoomPart_ThingDef>
-    <defName>HunterDrone</defName>
+  <RoomPart_ThingDef>
+    <defName>HunterDroneToxic</defName>
     <workerClass>RoomPart_CornerThing</workerClass>
-    <thingDef>HunterDroneTrap</thingDef>
-  </RoomPart_ThingDef> -->
+    <thingDef>Drone_HunterToxic_Trap</thingDef>
+  </RoomPart_ThingDef>
+
+  <RoomPart_ThingDef>
+    <defName>HunterDroneAntigrainWarhead</defName>
+    <workerClass>RoomPart_CornerThing</workerClass>
+    <thingDef>Drone_HunterAntigrainWarhead_Trap</thingDef>
+  </RoomPart_ThingDef>
+
+  <RoomPart_ThingDef>
+    <defName>HunterDroneIncendiary</defName>
+    <workerClass>RoomPart_CornerThing</workerClass>
+    <thingDef>Drone_HunterIncendiary_Trap</thingDef>
+  </RoomPart_ThingDef>
+
+  <RoomPart_ThingDef>
+    <defName>HunterDroneEMP</defName>
+    <workerClass>RoomPart_CornerThing</workerClass>
+    <thingDef>Drone_HunterEMP_Trap</thingDef>
+  </RoomPart_ThingDef>
+  
+  <RoomPart_ThingDef>
+    <defName>HunterDroneSmoke</defName>
+    <workerClass>RoomPart_CornerThing</workerClass>
+    <thingDef>Drone_HunterSmoke_Trap</thingDef>
+  </RoomPart_ThingDef>
 
 </Defs>
