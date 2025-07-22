@@ -6,7 +6,7 @@
     <label>toxic hunter drone</label>
     <labelPlural>toxic hunter drones</labelPlural>
     <race>Drone_HunterToxic</race>
-    <combatPower>75</combatPower>
+    <combatPower>70</combatPower>
     <canOpenDoors>true</canOpenDoors>
     <canOpenAnyDoor>true</canOpenAnyDoor>
     <lifeStages>
@@ -24,7 +24,7 @@
     <label>antigrain warhead hunter drone</label>
     <labelPlural>antigrain warhead drones</labelPlural>
     <race>Drone_HunterAntigrainWarhead</race>
-    <combatPower>75</combatPower>
+    <combatPower>350</combatPower>
     <canOpenDoors>true</canOpenDoors>
     <canOpenAnyDoor>true</canOpenAnyDoor>
     <lifeStages>
@@ -42,7 +42,7 @@
     <label>incendiary hunter drone</label>
     <labelPlural>incendiary hunter drones</labelPlural>
     <race>Drone_HunterIncendiary</race>
-    <combatPower>75</combatPower>
+    <combatPower>90</combatPower>
     <canOpenDoors>true</canOpenDoors>
     <canOpenAnyDoor>true</canOpenAnyDoor>
     <lifeStages>
@@ -60,7 +60,7 @@
     <label>EMP hunter drone</label>
     <labelPlural>EMP hunter drones</labelPlural>
     <race>Drone_HunterEMP</race>
-    <combatPower>75</combatPower>
+    <combatPower>100</combatPower>
     <canOpenDoors>true</canOpenDoors>
     <canOpenAnyDoor>true</canOpenAnyDoor>
     <lifeStages>
@@ -78,7 +78,7 @@
     <label>smoke hunter drone</label>
     <labelPlural>smoke hunter drones</labelPlural>
     <race>Drone_HunterSmoke</race>
-    <combatPower>75</combatPower>
+    <combatPower>50</combatPower>
     <canOpenDoors>true</canOpenDoors>
     <canOpenAnyDoor>true</canOpenAnyDoor>
     <lifeStages>
