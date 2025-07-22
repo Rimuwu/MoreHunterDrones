@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <MoreHunterDrones_NoCharged>You cannot use this item now because it has no charges. Recharge the backpack to use it.</MoreHunterDrones_NoCharged>
+
+    <MoreHunterDrones_IsCharged>The backpack is charged and ready to use.</MoreHunterDrones_IsCharged>
+
+    <MoreHunterDrones_ChargeIngredientsDesc>Required ingredients to recharge the backpack:</MoreHunterDrones_ChargeIngredientsDesc>
+
+    <MoreHunterDrones_VerbChargeDesc>Create a new drone inside the backpack for reuse.</MoreHunterDrones_VerbChargeDesc>
+
+    <MoreHunterDrones_SuccessMessage>The drone has been successfully created inside the backpack.</MoreHunterDrones_SuccessMessage>
+
+    <MoreHunterDrones_JobReportString>Charging hunter drone pack</MoreHunterDrones_JobReportString>
+    <MoreHunterDrones_PackAlreadyCharged>The backpack is already charged and ready to use.</MoreHunterDrones_PackAlreadyCharged>
+    <MoreHunterDrones_InsufficientIngredients>The colonist cannot carry all the required ingredients — it's too heavy!</MoreHunterDrones_InsufficientIngredients>
+    <MoreHunterDrones_CannotCollectItems>The colonist cannot collect all the items needed to create a new hunter.</MoreHunterDrones_CannotCollectItems>
+
+</LanguageData>

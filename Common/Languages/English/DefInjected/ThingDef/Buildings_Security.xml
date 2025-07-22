@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Toxic Trap -->
+    <Drone_HunterToxic_Trap.label>toxic hunter trap</Drone_HunterToxic_Trap.label>
+    <Drone_HunterToxic_Trap.description>A dormant toxic hunter drone that activates when a threat is detected. The toxic hunter drone approaches the target and detonates, releasing a cloud of toxic gas. Since it is hidden in the surrounding terrain, it cannot be placed near other traps.</Drone_HunterToxic_Trap.description>
+
+    <!-- Antigrain Trap -->
+    <Drone_HunterAntigrainWarhead_Trap.label>antigrain hunter trap</Drone_HunterAntigrainWarhead_Trap.label>
+    <Drone_HunterAntigrainWarhead_Trap.description>A dormant antigrain hunter drone that activates when a threat is detected. The antigrain hunter drone approaches the target and detonates, causing a massive explosion. Since it is hidden in the surrounding terrain, it cannot be placed near other traps.</Drone_HunterAntigrainWarhead_Trap.description>
+
+    <!-- Incendiary Trap -->
+    <Drone_HunterIncendiary_Trap.label>incendiary hunter trap</Drone_HunterIncendiary_Trap.label>
+    <Drone_HunterIncendiary_Trap.description>A dormant incendiary hunter drone that activates when a threat is detected. The incendiary hunter drone approaches the target and detonates, releasing a cloud of flammable gas. Since it is hidden in the surrounding terrain, it cannot be placed near other traps.</Drone_HunterIncendiary_Trap.description>
+
+    <!-- EMP Trap -->
+    <Drone_HunterEMP_Trap.label>EMP hunter trap</Drone_HunterEMP_Trap.label>
+    <Drone_HunterEMP_Trap.description>A dormant EMP hunter drone that activates when a threat is detected. The EMP hunter drone approaches the target and detonates, releasing a pulse that disables electronics in the area. Since it is hidden in the surrounding terrain, it cannot be placed near other traps.</Drone_HunterEMP_Trap.description>
+
+    <!-- Smoke Trap -->
+    <Drone_HunterSmoke_Trap.label>smoke hunter trap</Drone_HunterSmoke_Trap.label>
+    <Drone_HunterSmoke_Trap.description>A dormant smoke hunter drone that activates when a threat is detected. The smoke hunter drone approaches the target and detonates, releasing a cloud of smoke that reduces visibility in the area. Since it is hidden in the surrounding terrain, it cannot be placed near other traps.</Drone_HunterSmoke_Trap.description>
+
+</LanguageData>

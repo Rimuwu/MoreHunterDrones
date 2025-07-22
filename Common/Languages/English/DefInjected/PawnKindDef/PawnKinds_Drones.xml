@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <Drone_HunterToxic.label>toxic hunter drone</Drone_HunterToxic.label>
+    <Drone_HunterToxic.labelPlural>toxic hunter drones</Drone_HunterToxic.labelPlural>
+
+    <Drone_HunterAntigrainWarhead.label>antigrain hunter drone</Drone_HunterAntigrainWarhead.label>
+    <Drone_HunterAntigrainWarhead.labelPlural>antigrain hunter drones</Drone_HunterAntigrainWarhead.labelPlural>
+
+    <Drone_HunterIncendiary.label>incendiary hunter drone</Drone_HunterIncendiary.label>
+    <Drone_HunterIncendiary.labelPlural>incendiary hunter drones</Drone_HunterIncendiary.labelPlural>
+
+    <Drone_HunterEMP.label>EMP hunter drone</Drone_HunterEMP.label>
+    <Drone_HunterEMP.labelPlural>EMP hunter drones</Drone_HunterEMP.labelPlural>
+
+    <Drone_HunterSmoke.label>smoke hunter drone</Drone_HunterSmoke.label>
+    <Drone_HunterSmoke.labelPlural>smoke hunter drones</Drone_HunterSmoke.labelPlural>
+
+</LanguageData>

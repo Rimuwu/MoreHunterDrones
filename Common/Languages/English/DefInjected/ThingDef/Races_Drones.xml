@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Toxic Drone -->
+    <Drone_HunterToxic.label>toxic hunter</Drone_HunterToxic.label>
+    <Drone_HunterToxic.description>Automated killer drone. The toxic hunter drone pursues its target and detonates upon approach, releasing a cloud of toxic gas.</Drone_HunterToxic.description>
+    <Drone_HunterToxic.comps.CompMechPowerCell.labelOverride>Battery</Drone_HunterToxic.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterToxic.comps.CompMechPowerCell.tooltipOverride>Drones have a limited battery lifespan. When the battery is depleted, the drone shuts down.</Drone_HunterToxic.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterToxic.tools.shell_spike.label>armorspike</Drone_HunterToxic.tools.shell_spike.label>
+
+    <!-- Antigrain Drone -->
+    <Drone_HunterAntigrainWarhead.label>antigrain hunter drone</Drone_HunterAntigrainWarhead.label>
+    <Drone_HunterAntigrainWarhead.description>Automated killer drone. The antigrain hunter drone pursues its target and detonates upon approach, causing a massive explosion.</Drone_HunterAntigrainWarhead.description>
+    <Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.labelOverride>Battery</Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.tooltipOverride>Drones have a limited battery lifespan. When the battery is depleted, the drone shuts down.</Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterAntigrainWarhead.tools.shell_spike.label>armorspike</Drone_HunterAntigrainWarhead.tools.shell_spike.label>
+    
+    <!-- Incendiary Drone -->
+    <Drone_HunterIncendiary.label>incendiary hunter drone</Drone_HunterIncendiary.label>
+    <Drone_HunterIncendiary.description>Automated killer drone. The incendiary hunter drone pursues its target and detonates upon approach, releasing a cloud of flammable gas.</Drone_HunterIncendiary.description>
+    <Drone_HunterIncendiary.comps.CompMechPowerCell.labelOverride>Battery</Drone_HunterIncendiary.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterIncendiary.comps.CompMechPowerCell.tooltipOverride>Drones have a limited battery lifespan. When the battery is depleted, the drone shuts down.</Drone_HunterIncendiary.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterIncendiary.tools.shell_spike.label>armorspike</Drone_HunterIncendiary.tools.shell_spike.label>
+    
+    <!-- EMP Drone -->
+    <Drone_HunterEMP.label>EMP hunter drone</Drone_HunterEMP.label>
+    <Drone_HunterEMP.description>Automated killer drone. The EMP hunter drone pursues its target and detonates upon approach, releasing a pulse that disables electronics.</Drone_HunterEMP.description>
+    <Drone_HunterSmoke.comps.CompMechPowerCell.labelOverride>Battery</Drone_HunterSmoke.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterSmoke.comps.CompMechPowerCell.tooltipOverride>Drones have a limited battery lifespan. When the battery is depleted, the drone shuts down.</Drone_HunterSmoke.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterSmoke.tools.shell_spike.label>armorspike</Drone_HunterSmoke.tools.shell_spike.label>
+    
+    <!-- Smoke Drone -->
+    <Drone_HunterSmoke.label>smoke hunter drone</Drone_HunterSmoke.label>
+    <Drone_HunterSmoke.description>Automated killer drone. The smoke hunter drone pursues its target and detonates upon approach, releasing a cloud of smoke that impairs visibility.</Drone_HunterSmoke.description>
+    <Drone_HunterSmoke.comps.CompMechPowerCell.labelOverride>Battery</Drone_HunterSmoke.comps.CompMechPowerCell.labelOverride>
+    <Drone_HunterSmoke.comps.CompMechPowerCell.tooltipOverride>Drones have a limited battery lifespan. When the battery is depleted, the drone shuts down.</Drone_HunterSmoke.comps.CompMechPowerCell.tooltipOverride>
+    <Drone_HunterSmoke.tools.shell_spike.label>armorspike</Drone_HunterSmoke.tools.shell_spike.label>
+
+</LanguageData>

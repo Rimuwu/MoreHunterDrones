@@ -8,9 +8,9 @@
     <Drone_HunterToxic.comps.CompMechPowerCell.tooltipOverride>Дроны имеют ограниченный срок службы аккумулятора. Когда аккумулятор разряжается, дрон отключается.</Drone_HunterToxic.comps.CompMechPowerCell.tooltipOverride>
     <Drone_HunterToxic.tools.shell_spike.label>бронешип</Drone_HunterToxic.tools.shell_spike.label>
 
-    <!-- Антизерновый дрон -->
-    <Drone_HunterAntigrainWarhead.label>антизерновый охотничий дрон</Drone_HunterAntigrainWarhead.label>
-    <Drone_HunterAntigrainWarhead.description>Автоматизированный дрон-убийца. Антизерновый охотничий дрон преследует свою цель и детонирует при приближении, вызывая мощнейший взрыв.</Drone_HunterAntigrainWarhead.description>
+    <!-- Грануальный дрон -->
+    <Drone_HunterAntigrainWarhead.label>грануальный охотничий дрон</Drone_HunterAntigrainWarhead.label>
+    <Drone_HunterAntigrainWarhead.description>Автоматизированный дрон-убийца. Грануальный охотничий дрон преследует свою цель и детонирует при приближении, вызывая мощнейший взрыв.</Drone_HunterAntigrainWarhead.description>
     <Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.labelOverride>Аккумулятор</Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.labelOverride>
     <Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.tooltipOverride>Дроны имеют ограниченный срок службы аккумулятора. Когда аккумулятор разряжается, дрон отключается.</Drone_HunterAntigrainWarhead.comps.CompMechPowerCell.tooltipOverride>
     <Drone_HunterAntigrainWarhead.tools.shell_spike.label>бронешип</Drone_HunterAntigrainWarhead.tools.shell_spike.label>
