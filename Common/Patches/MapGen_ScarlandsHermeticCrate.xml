@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingSetMakerDef[defName="MapGen_ScarlandsHermeticCrate"]/root/options</xpath>
+    <value>
+      <!-- Hunter Toxic Pack -->
+      <li>
+        <weight>0.15</weight>
+        <thingSetMaker Class="ThingSetMaker_StackCount">
+          <fixedParams>
+            <filter>
+              <thingDefs>
+                <li>Apparel_PackHunter_Toxic</li>
+              </thingDefs>
+            </filter>
+            <countRange>1~1</countRange>
+          </fixedParams>
+        </thingSetMaker>
+      </li>
+
+      <!-- Hunter Antigrain Warhead Pack -->
+      <li>
+        <weight>0.05</weight>
+        <thingSetMaker Class="ThingSetMaker_StackCount">
+          <fixedParams>
+            <filter>
+              <thingDefs>
+                <li>Apparel_PackHunter_AntigrainWarhead</li>
+              </thingDefs>
+            </filter>
+            <countRange>1~1</countRange>
+          </fixedParams>
+        </thingSetMaker>
+      </li>
+
+      <!-- Hunter Incendiary Pack -->
+      <li>
+        <weight>0.12</weight>
+        <thingSetMaker Class="ThingSetMaker_StackCount">
+          <fixedParams>
+            <filter>
+              <thingDefs>
+                <li>Apparel_PackHunter_Incendiary</li>
+              </thingDefs>
+            </filter>
+            <countRange>1~1</countRange>
+          </fixedParams>
+        </thingSetMaker>
+      </li>
+
+      <!-- Hunter EMP Pack -->
+      <li>
+        <weight>0.12</weight>
+        <thingSetMaker Class="ThingSetMaker_StackCount">
+          <fixedParams>
+            <filter>
+              <thingDefs>
+                <li>Apparel_PackHunter_EMP</li>
+              </thingDefs>
+            </filter>
+            <countRange>1~1</countRange>
+          </fixedParams>
+        </thingSetMaker>
+      </li>
+
+      <!-- Hunter Smoke Pack -->
+      <li>
+        <weight>0.20</weight>
+        <thingSetMaker Class="ThingSetMaker_StackCount">
+          <fixedParams>
+            <filter>
+              <thingDefs>
+                <li>Apparel_PackHunter_Smoke</li>
+              </thingDefs>
+            </filter>
+            <countRange>1~1</countRange>
+          </fixedParams>
+        </thingSetMaker>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>
