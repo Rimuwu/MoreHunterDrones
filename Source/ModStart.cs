@@ -1,6 +1,5 @@
 ﻿
 using Verse;
-using HarmonyLib;
 
 namespace MoreHunterDrones
 {

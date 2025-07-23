@@ -2,14 +2,8 @@
 // Verse.Verb_LaunchProjectileStaticOneUse
 using MoreHunterDrones.Comps;
 using RimWorld;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using Verse;
-using Verse.AI;
-using static HarmonyLib.Code;
-using MoreHunterDrones.Jobs;
 
 namespace MoreHunterDrones.Verbs
 {

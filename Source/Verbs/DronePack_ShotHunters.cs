@@ -4,8 +4,6 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
-using static HarmonyLib.Code;
-using static UnityEngine.GraphicsBuffer;
 
 
 namespace MoreHunterDrones.Verbs
