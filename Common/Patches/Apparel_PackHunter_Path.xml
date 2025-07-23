@@ -37,12 +37,12 @@
         <li Class="MoreHunterDrones.Comps.CompProperties_ChargeDronePack">
             <chargeIngredients>
               <li>
-                <key>Steel</key>
-                <value>50</value>
-              </li>
-              <li>
                 <key>ComponentIndustrial</key>
                 <value>2</value>
+              </li>
+              <li>
+                <key>Steel</key>
+                <value>50</value>
               </li>
             </chargeIngredients>
         </li>
