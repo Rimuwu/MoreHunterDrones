@@ -3,4 +3,49 @@
 
   <Apparel_PackHunter.verbs.Verb_ChargeDronePack.label>Зарядить ранец</Apparel_PackHunter.verbs.Verb_ChargeDronePack.label>
 
+
+  <Apparel_PackHunter_Toxic.label>Охотничий токсичный ранец</Apparel_PackHunter_Toxic.label>
+  <Apparel_PackHunter_Toxic.description>Носимый ранец, выпускающий охотничьего дрона с токсичным газом. Дрон приблизится к цели и выпустит токсичный газ, когда окажется в радиусе действия.</Apparel_PackHunter_Toxic.description>
+
+  <Apparel_PackHunter_Toxic.verbs.Verb_ChargeDronePack.label>Зарядить ранец</Apparel_PackHunter_Toxic.verbs.Verb_ChargeDronePack.label>
+  <Apparel_PackHunter_Toxic.verbs.Verb_LaunchDrone.label>Запустить дрона</Apparel_PackHunter_Toxic.verbs.Verb_LaunchDrone.label>
+
+  <Grenade_HunterPackToxic.label>Капсула охотничьего токсичного ранца</Grenade_HunterPackToxic.label>
+
+
+  <Apparel_PackHunter_AntigrainWarhead.label>Охотничий ранец с антивзрывной боеголовкой</Apparel_PackHunter_AntigrainWarhead.label>
+  <Apparel_PackHunter_AntigrainWarhead.description>Носимый ранец, выпускающий охотничьего дрона с антивзрывной боеголовкой. Дрон найдет цель и взорвется с разрушительной силой.</Apparel_PackHunter_AntigrainWarhead.description>
+
+  <Apparel_PackHunter_AntigrainWarhead.verbs.Verb_ChargeDronePack.label>Зарядить ранец</Apparel_PackHunter_AntigrainWarhead.verbs.Verb_ChargeDronePack.label>
+  <Apparel_PackHunter_AntigrainWarhead.verbs.Verb_LaunchDrone.label>Запустить дрона</Apparel_PackHunter_AntigrainWarhead.verbs.Verb_LaunchDrone.label>
+
+  <Grenade_HunterPackToxic.label>Капсула охотничьего ранца с антивзрывной боеголовкой</Grenade_HunterPackToxic.label>
+
+
+  <Apparel_PackHunter_Incendiary.label>Охотничий ранец с зажигательной ловушкой</Apparel_PackHunter_Incendiary.label>
+  <Apparel_PackHunter_Incendiary.description>Носимый ранец, выпускающий охотничьего дрона с зажигательной ловушкой. Дрон найдет цель и установит ловушку, поджигающую область.</Apparel_PackHunter_Incendiary.description>
+
+  <Apparel_PackHunter_Incendiary.verbs.Verb_ChargeDronePack.label>Зарядить ранец</Apparel_PackHunter_Incendiary.verbs.Verb_ChargeDronePack.label>
+  <Apparel_PackHunter_Incendiary.verbs.Verb_LaunchDrone.label>Запустить дрона</Apparel_PackHunter_Incendiary.verbs.Verb_LaunchDrone.label>
+
+  <Grenade_HunterPackToxic.label>Капсула охотничьего ранца с зажигательной ловушкой</Grenade_HunterPackToxic.label>
+
+
+  <Apparel_PackHunter_EMP.label>Охотничий ранец с ЭМИ-ловушкой</Apparel_PackHunter_EMP.label>
+  <Apparel_PackHunter_EMP.description>Носимый ранец, выпускающий охотничьего дрона с ЭМИ-ловушкой. Дрон найдет цель и установит ловушку, излучающую мощный ЭМИ-импульс, отключая электронику в области.</Apparel_PackHunter_EMP.description>
+
+  <Apparel_PackHunter_EMP.verbs.Verb_ChargeDronePack.label>Зарядить ранец</Apparel_PackHunter_EMP.verbs.Verb_ChargeDronePack.label>
+  <Apparel_PackHunter_EMP.verbs.Verb_LaunchDrone.label>Запустить дрона</Apparel_PackHunter_EMP.verbs.Verb_LaunchDrone.label>
+
+  <Grenade_HunterPackToxic.label>Капсула охотничьего ранца с ЭМИ-ловушкой</Grenade_HunterPackToxic.label>
+
+
+  <Apparel_PackHunter_Smoke.label>Охотничий ранец с дымовой ловушкой</Apparel_PackHunter_Smoke.label>
+  <Apparel_PackHunter_Smoke.description>Носимый ранец, выпускающий охотничьего дрона с дымовой ловушкой. Дрон найдет цель и установит ловушку, выпускающую облако дыма, затрудняющее видимость в области.</Apparel_PackHunter_Smoke.description>
+
+  <Apparel_PackHunter_Smoke.verbs.Verb_ChargeDronePack.label>Зарядить ранец</Apparel_PackHunter_Smoke.verbs.Verb_ChargeDronePack.label>
+  <Apparel_PackHunter_Smoke.verbs.Verb_LaunchDrone.label>Запустить дрона</Apparel_PackHunter_Smoke.verbs.Verb_LaunchDrone.label>
+
+  <Grenade_HunterPackToxic.label>Капсула охотничьего ранца с дымовой ловушкой</Grenade_HunterPackToxic.label>
+
 </LanguageData>
