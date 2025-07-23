@@ -8,6 +8,7 @@
         <Steel>35</Steel>
         <ComponentIndustrial>2</ComponentIndustrial>
         <Neutroamine>5</Neutroamine>
+        <Chemfuel>20</Chemfuel>
       </costList>
     </value>
   </Operation>
