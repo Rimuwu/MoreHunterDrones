@@ -5,17 +5,7 @@
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>
-    dev MoreHunterDrones 
+	<description>Adds 5 new types of hunter drones to the game: incendiary, toxic, EMP, antigrain, and smoke. Also makes the wasp trap buildable by the player. Each drone can be used both as a threat and a tool. Includes rechargeable thrower backpacks for all drone types. Fully translated into English and Russian.
 	</description>
-
-<!-- 	<modDependencies>
-		<li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-		</li>
-	</modDependencies> -->
 
 </ModMetaData>
