@@ -7,5 +7,12 @@
 	</supportedVersions>
 	<description>Adds 5 new types of hunter drones to the game: incendiary, toxic, EMP, antigrain, and smoke. Also makes the wasp trap buildable by the player. Each drone can be used both as a threat and a tool. Includes rechargeable thrower backpacks for all drone types. Fully translated into English and Russian.
 	</description>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Odyssey</li>
+	</loadAfter>
 
 </ModMetaData>
