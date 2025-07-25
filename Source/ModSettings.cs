@@ -194,7 +194,7 @@ namespace MoreHunterDrones
             // Слайдер для максимального количества дронов на комнату
             string maxDronesLabel = $"Максимальное количество дронов на комнату: {settings.maxDronesPerRoom}";
             listingStandard.Label(maxDronesLabel);
-            settings.maxDronesPerRoom = (int)listingStandard.Slider(settings.maxDronesPerRoom, 0, 10);
+            settings.maxDronesPerRoom = (int)listingStandard.Slider(settings.maxDronesPerRoom, 2, 5);
             
             listingStandard.Gap(12f);
 
