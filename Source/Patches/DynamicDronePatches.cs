@@ -1,123 +1,87 @@
 using HarmonyLib;
 using RimWorld;
 using Verse;
-using System.Collections.Generic;
 
 namespace MoreHunterDrones.Patches
 {
     /// <summary>
-    /// Патч для контроля спавна дронов в древних структурах
+    /// Патч для замены отключенных дронов на стандартного HunterDrone в древних структурах
     /// </summary>
     [HarmonyPatch]
     public static class DynamicDronePatches
     {
-        // Счетчик для генерации уникальных ID комнат
-        private static int roomIdCounter = 0;
-        
-        // Текущий ID обрабатываемой комнаты
-        private static string currentRoomId = "";
-
         /// <summary>
-        /// Патч для отслеживания начала генерации комнаты
-        /// </summary>
-        [HarmonyPatch(typeof(LayoutRoomDef), "ResolveContents")]
-        [HarmonyPrefix]
-        public static void ResolveContents_Prefix()
-        {
-            // Создаем новый ID для комнаты и сбрасываем счетчик
-            currentRoomId = $"room_{roomIdCounter++}";
-            DroneSpawnManager.ResetRoomDroneCount(currentRoomId);
-        }
-
-        /// <summary>
-        /// Патч для умной замены отключенных дрон-ловушек
+        /// Патч для замены отключенных дрон-ловушек на стандартного HunterDrone
         /// </summary>
         [HarmonyPatch(typeof(ThingMaker), "MakeThing")]
         [HarmonyPostfix]
         public static void MakeThing_Postfix(ThingDef def, ref Thing __result)
         {
-            // Проверяем, является ли это дрон-ловушкой
-            if (__result != null && IsDroneTrap(def))
+            // Проверяем, является ли это отключенной дрон-ловушкой
+            if (__result != null && IsDisabledDroneTrap(def))
             {
-                string pawnKindDefName = GetPawnKindDefFromTrapDef(def);
-                bool isDisabled = pawnKindDefName != null && !DroneSpawnManager.IsDroneEnabledFast(pawnKindDefName);
-                bool roomHasSpace = DroneSpawnManager.CanAddMoreDronesToRoom(currentRoomId);
-
-                if (isDisabled)
+                // Уничтожаем отключенную дрон-ловушку
+                __result.Destroy(DestroyMode.Vanish);
+                
+                // Пытаемся заменить на стандартного HunterDrone
+                var standardHunterDroneTrap = DroneSpawnManager.GetStandardHunterDroneTrap();
+                if (standardHunterDroneTrap != null)
                 {
-                    // Дрон отключен
-                    __result.Destroy(DestroyMode.Vanish);
-
-                    if (roomHasSpace)
+                    // Создаем стандартную ловушку HunterDrone
+                    if (standardHunterDroneTrap.MadeFromStuff)
                     {
-                        // Есть место - заменяем на базовый дрон
-                        var replacementTrap = DroneSpawnManager.GetReplacementDroneTrap();
-                        if (replacementTrap != null)
-                        {
-                            if (replacementTrap.MadeFromStuff)
-                            {
-                                // Для ловушек, требующих материал
-                                var defaultStuff = GenStuff.DefaultStuffFor(replacementTrap);
-                                __result = ThingMaker.MakeThing(replacementTrap, defaultStuff);
-                            }
-                            else
-                            {
-                                __result = ThingMaker.MakeThing(replacementTrap);
-                            }
-                            
-                            DroneSpawnManager.IncrementRoomDroneCount(currentRoomId);
-                            
-                            if (DebugSettings.godMode)
-                            {
-                                Log.Message($"[MoreHunterDrones] Replaced disabled drone {def.defName} with {replacementTrap.defName}");
-                            }
-                        }
-                        else
-                        {
-                            __result = null;
-                        }
+                        var defaultStuff = GenStuff.DefaultStuffFor(standardHunterDroneTrap);
+                        __result = ThingMaker.MakeThing(standardHunterDroneTrap, defaultStuff);
                     }
                     else
                     {
-                        // Нет места - просто удаляем
-                        __result = null;
-                        
-                        if (DebugSettings.godMode)
-                        {
-                            Log.Message($"[MoreHunterDrones] Removed disabled drone {def.defName} - room at drone limit");
-                        }
+                        __result = ThingMaker.MakeThing(standardHunterDroneTrap);
+                    }
+                    
+                    if (DebugSettings.godMode)
+                    {
+                        Log.Message($"[MoreHunterDrones] Replaced disabled drone trap {def.defName} with standard HunterDrone");
                     }
                 }
-                else if (pawnKindDefName != null)
+                else
                 {
-                    // Дрон включен - считаем его
-                    if (roomHasSpace)
+                    // Fallback - создаем кусок металлолома если стандартный HunterDrone не найден
+                    var fallbackDef = ThingDefOf.ChunkSlagSteel ?? ThingDefOf.Steel;
+                    if (fallbackDef != null)
                     {
-                        DroneSpawnManager.IncrementRoomDroneCount(currentRoomId);
+                        __result = ThingMaker.MakeThing(fallbackDef);
+                        if (DebugSettings.godMode)
+                        {
+                            Log.Message($"[MoreHunterDrones] Standard HunterDrone not found, replaced {def.defName} with {fallbackDef.defName}");
+                        }
                     }
                     else
                     {
-                        // Превышен лимит - заменяем на обычную ловушку
-                        __result.Destroy(DestroyMode.Vanish);
-                        
-                        var spikeTrap = ThingDefOf.TrapSpike;
-                        if (spikeTrap != null)
-                        {
-                            var defaultStuff = GenStuff.DefaultStuffFor(spikeTrap);
-                            __result = ThingMaker.MakeThing(spikeTrap, defaultStuff);
-                        }
-                        else
-                        {
-                            __result = null;
-                        }
-                        
+                        // Последний fallback - просто удаляем
+                        __result = null;
                         if (DebugSettings.godMode)
                         {
-                            Log.Message($"[MoreHunterDrones] Replaced drone {def.defName} with spike trap - room at drone limit");
+                            Log.Warning($"[MoreHunterDrones] No replacement found, removed disabled drone trap {def.defName}");
                         }
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Проверка, является ли ThingDef отключенной дрон-ловушкой
+        /// </summary>
+        private static bool IsDisabledDroneTrap(ThingDef thingDef)
+        {
+            if (thingDef?.defName == null)
+                return false;
+
+            // Проверяем только если это дрон-ловушка
+            if (!IsDroneTrap(thingDef))
+                return false;
+
+            string pawnKindDefName = GetPawnKindDefFromTrapDef(thingDef);
+            return pawnKindDefName != null && !DroneSpawnManager.IsDroneEnabledFast(pawnKindDefName);
         }
 
         /// <summary>
@@ -153,11 +117,6 @@ namespace MoreHunterDrones.Patches
                     return "Drone_HunterEMP";
                 case "Drone_HunterSmoke_Trap":
                     return "Drone_HunterSmoke";
-                // Можно добавить базовые дроны если они есть
-                case "HunterDrone_Trap":
-                    return "HunterDrone";
-                case "WaspDrone_Trap":
-                    return "WaspDrone";
                 default:
                     return null;
             }

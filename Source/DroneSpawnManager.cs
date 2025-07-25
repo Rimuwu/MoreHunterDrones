@@ -1,23 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using Verse;
 using RimWorld;
 
 namespace MoreHunterDrones
 {
     /// <summary>
-    /// Система управления состоянием дронов для блокировки спавна в структурах
+    /// РЎРёСЃС‚РµРјР° СѓРїСЂР°РІР»РµРЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёРµРј РґСЂРѕРЅРѕРІ РґР»СЏ Р±Р»РѕРєРёСЂРѕРІРєРё СЃРїР°РІРЅР° РІ СЃС‚СЂСѓРєС‚СѓСЂР°С…
     /// </summary>
     public static class DroneSpawnManager
     {
-        // Кэш состояний дронов для быстрого доступа
+        // РљСЌС€ СЃРѕСЃС‚РѕСЏРЅРёР№ РґСЂРѕРЅРѕРІ РґР»СЏ Р±С‹СЃС‚СЂРѕРіРѕ РґРѕСЃС‚СѓРїР°
         private static Dictionary<string, bool> cachedDroneStates = new Dictionary<string, bool>();
-        
-        // Счетчик дронов по комнатам для контроля лимитов
-        private static Dictionary<string, int> roomDroneCount = new Dictionary<string, int>();
 
         /// <summary>
-        /// Инициализация системы управления дронами
+        /// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃРёСЃС‚РµРјС‹ СѓРїСЂР°РІР»РµРЅРёСЏ РґСЂРѕРЅР°РјРё
         /// </summary>
         public static void Initialize()
         {
@@ -26,12 +24,12 @@ namespace MoreHunterDrones
         }
 
         /// <summary>
-        /// Обновление состояния конкретного дрона
+        /// РћР±РЅРѕРІР»РµРЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ РґСЂРѕРЅР°
         /// </summary>
         public static void RefreshDroneState(string pawnKindDefName, bool enabled)
         {
             if (cachedDroneStates.TryGetValue(pawnKindDefName, out bool currentValue) && currentValue == enabled)
-                return; // Нет изменений
+                return; // РќРµС‚ РёР·РјРµРЅРµРЅРёР№
 
             cachedDroneStates[pawnKindDefName] = enabled;
             
@@ -42,7 +40,7 @@ namespace MoreHunterDrones
         }
 
         /// <summary>
-        /// Обновление всех состояний дронов из настроек
+        /// РћР±РЅРѕРІР»РµРЅРёРµ РІСЃРµС… СЃРѕСЃС‚РѕСЏРЅРёР№ РґСЂРѕРЅРѕРІ РёР· РЅР°СЃС‚СЂРѕРµРє
         /// </summary>
         public static void RefreshAllDroneStates()
         {
@@ -52,15 +50,39 @@ namespace MoreHunterDrones
 
             cachedDroneStates.Clear();
             
-            // Получаем состояния всех известных дронов
-            var droneDefNames = new string[]
+            // РџРѕР»СѓС‡Р°РµРј СЃРѕСЃС‚РѕСЏРЅРёСЏ РІСЃРµС… РёР·РІРµСЃС‚РЅС‹С… РґСЂРѕРЅРѕРІ С‡РµСЂРµР· СЂРµС„Р»РµРєСЃРёСЋ РёР· DronPawnsKindDefOf
+            var droneDefNames = new List<string>();
+            
+            try
             {
-                "Drone_HunterToxic",
-                "Drone_HunterAntigrainWarhead", 
-                "Drone_HunterIncendiary",
-                "Drone_HunterEMP",
-                "Drone_HunterSmoke"
-            };
+                var fields = typeof(DronPawnsKindDefOf).GetFields(BindingFlags.Public | BindingFlags.Static);
+                
+                foreach (var field in fields)
+                {
+                    if (field.FieldType == typeof(PawnKindDef))
+                    {
+                        var pawnKindDef = (PawnKindDef)field.GetValue(null);
+                        if (pawnKindDef != null)
+                        {
+                            droneDefNames.Add(pawnKindDef.defName);
+                        }
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Log.Warning($"[MoreHunterDrones] Failed to get drone kinds via reflection: {ex.Message}");
+                
+                // Fallback - РёСЃРїРѕР»СЊР·СѓРµРј С…Р°СЂРґРєРѕРґРёСЂРѕРІР°РЅРЅС‹Р№ СЃРїРёСЃРѕРє
+                droneDefNames.AddRange(new string[]
+                {
+                    "Drone_HunterToxic",
+                    "Drone_HunterAntigrainWarhead", 
+                    "Drone_HunterIncendiary",
+                    "Drone_HunterEMP",
+                    "Drone_HunterSmoke"
+                });
+            }
             
             foreach (string pawnKindDefName in droneDefNames)
             {
@@ -70,7 +92,7 @@ namespace MoreHunterDrones
         }
 
         /// <summary>
-        /// Быстрая проверка включенности дрона по PawnKindDef имени
+        /// Р‘С‹СЃС‚СЂР°СЏ РїСЂРѕРІРµСЂРєР° РІРєР»СЋС‡РµРЅРЅРѕСЃС‚Рё РґСЂРѕРЅР° РїРѕ PawnKindDef РёРјРµРЅРё
         /// </summary>
         public static bool IsDroneEnabledFast(string pawnKindDefName)
         {
@@ -80,7 +102,7 @@ namespace MoreHunterDrones
             if (cachedDroneStates.TryGetValue(pawnKindDefName, out bool enabled))
                 return enabled;
                 
-            // Fallback на прямую проверку настроек
+            // Fallback РЅР° РїСЂСЏРјСѓСЋ РїСЂРѕРІРµСЂРєСѓ РЅР°СЃС‚СЂРѕРµРє
             try
             {
                 return HunterDroneMod.IsDroneEnabled(pawnKindDefName);
@@ -91,54 +113,24 @@ namespace MoreHunterDrones
                 {
                     Log.Warning($"[MoreHunterDrones] Failed to check drone state for {pawnKindDefName}: {ex.Message}");
                 }
-                return true; // По умолчанию разрешаем, если не можем проверить
+                return true; // РџРѕ СѓРјРѕР»С‡Р°РЅРёСЋ СЂР°Р·СЂРµС€Р°РµРј, РµСЃР»Рё РЅРµ РјРѕР¶РµРј РїСЂРѕРІРµСЂРёС‚СЊ
             }
         }
 
         /// <summary>
-        /// Сброс счетчика дронов для новой комнате
+        /// РџРѕР»СѓС‡РµРЅРёРµ ThingDef РґР»СЏ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ HunterDroneTrap РєР°Рє Р·Р°РјРµРЅС‹
         /// </summary>
-        public static void ResetRoomDroneCount(string roomId)
+        public static ThingDef GetStandardHunterDroneTrap()
         {
-            roomDroneCount[roomId] = 0;
-        }
-
-        /// <summary>
-        /// Увеличение счетчика дронов в комнате
-        /// </summary>
-        public static void IncrementRoomDroneCount(string roomId)
-        {
-            if (!roomDroneCount.ContainsKey(roomId))
-                roomDroneCount[roomId] = 0;
-            roomDroneCount[roomId]++;
-        }
-
-        /// <summary>
-        /// Проверка, можно ли добавить еще дронов в комнату
-        /// </summary>
-        public static bool CanAddMoreDronesToRoom(string roomId)
-        {
-            int currentCount = roomDroneCount.TryGetValue(roomId, out int count) ? count : 0;
-            int maxDrones = HunterDroneMod.GetMaxDronesPerRoom();
-            return currentCount < maxDrones;
-        }
-
-        /// <summary>
-        /// Получение ThingDef для базового дрона-охотника как замены
-        /// </summary>
-        public static ThingDef GetReplacementDroneTrap()
-        {
-            // Пытаемся найти базовый HunterDrone или WaspDrone как замену
-            var hunterDroneTrap = DefDatabase<ThingDef>.GetNamedSilentFail("HunterDrone_Trap");
-            if (hunterDroneTrap != null)
-                return hunterDroneTrap;
-
-            var waspDroneTrap = DefDatabase<ThingDef>.GetNamedSilentFail("WaspDrone_Trap");
-            if (waspDroneTrap != null)
-                return waspDroneTrap;
-
-            // Если нет базовых дронов, используем обычную ловушку
-            return ThingDefOf.TrapSpike;
+            // РС‰РµРј СЃС‚Р°РЅРґР°СЂС‚РЅСѓСЋ Р»РѕРІСѓС€РєСѓ HunterDroneTrap
+            var hunterDroneTrap = DefDatabase<ThingDef>.GetNamedSilentFail("HunterDroneTrap");
+            
+            if (hunterDroneTrap == null && DebugSettings.godMode)
+            {
+                Log.Warning("[MoreHunterDrones] HunterDroneTrap not found, using fallback");
+            }
+            
+            return hunterDroneTrap;
         }
     }
 }

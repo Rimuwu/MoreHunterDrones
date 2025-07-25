@@ -30,9 +30,6 @@ namespace MoreHunterDrones
     {
         // Словарь для хранения состояния включения/выключения дронов
         public Dictionary<string, bool> droneEnabledStates = new Dictionary<string, bool>();
-        
-        // Максимальное количество дронов на комнату
-        public int maxDronesPerRoom = 3;
 
         // Получение всех дронов из DronPawnsKindDefOf
         private List<PawnKindDef> GetAllDroneKinds()
@@ -95,7 +92,6 @@ namespace MoreHunterDrones
         public override void ExposeData()
         {
             Scribe_Collections.Look(ref droneEnabledStates, "droneEnabledStates", LookMode.Value, LookMode.Value);
-            Scribe_Values.Look(ref maxDronesPerRoom, "maxDronesPerRoom", 3);
             base.ExposeData();
             
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
@@ -107,6 +103,7 @@ namespace MoreHunterDrones
         }
     }
 
+    // Страница настроек мода
     public class HunterDroneMod : Mod
     {
         HunterDroneSettings settings;
@@ -184,23 +181,9 @@ namespace MoreHunterDrones
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(inRect); // начинаем новый список
 
-            // Настройка максимального количества дронов
-            Text.Font = GameFont.Medium;
-            listingStandard.Label("Настройки дронов:");
-            Text.Font = GameFont.Small;
-            
-            listingStandard.Gap(12f);
-            
-            // Слайдер для максимального количества дронов на комнату
-            string maxDronesLabel = $"Максимальное количество дронов на комнату: {settings.maxDronesPerRoom}";
-            listingStandard.Label(maxDronesLabel);
-            settings.maxDronesPerRoom = (int)listingStandard.Slider(settings.maxDronesPerRoom, 2, 5);
-            
-            listingStandard.Gap(12f);
-
-            // Заголовок для списка дронов
-            Text.Font = GameFont.Medium;
-            listingStandard.Label("Включённые дроны:");
+            // Заголовок
+            //Text.Font = GameFont.Medium;
+            //listingStandard.Label("Включённые дроны:");
             Text.Font = GameFont.Small;
 
             listingStandard.Gap(12f);
@@ -220,7 +203,7 @@ namespace MoreHunterDrones
 
             // Создаем область для прокрутки
             float totalHeight = rowsCount * ROW_HEIGHT + 20f;
-            Rect scrollRect = listingStandard.GetRect(Mathf.Min(250f, totalHeight));
+            Rect scrollRect = listingStandard.GetRect(Mathf.Min(350f, totalHeight));
             Rect viewRect = new Rect(0f, 0f, scrollRect.width - 16f, totalHeight);
 
             // Начинаем прокрутку
@@ -340,13 +323,6 @@ namespace MoreHunterDrones
         {
             var mod = LoadedModManager.GetMod<HunterDroneMod>();
             return mod?.settings?.IsDroneEnabled(defName) ?? true;
-        }
-        
-        // Статический метод для получения максимального количества дронов на комнату
-        public static int GetMaxDronesPerRoom()
-        {
-            var mod = LoadedModManager.GetMod<HunterDroneMod>();
-            return mod?.settings?.maxDronesPerRoom ?? 3;
         }
     }
 }
