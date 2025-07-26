@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Verse;
+using System.Security.Policy;
 using UnityEngine;
-using RimWorld;
+using Verse;
 
 namespace MoreHunterDrones
 {
@@ -28,7 +29,7 @@ namespace MoreHunterDrones
     // Класс настроек мода, который будет хранить состояние включения/выключения дронов
     public class HunterDroneSettings : ModSettings
     {
-        // Словарь для хранения состояния включения/выключения дронов
+        // Словарь для хранения состояния включения/выключения дронов (инициализируем его, для сохранения в памяти)
         public Dictionary<string, bool> droneEnabledStates = new Dictionary<string, bool>();
 
         // Получение всех дронов из DronPawnsKindDefOf
@@ -82,9 +83,9 @@ namespace MoreHunterDrones
             bool currentState = droneEnabledStates.TryGetValue(defName, out bool current) ? current : true;
             if (currentState == enabled)
                 return; // Нет изменений
-                
+
             droneEnabledStates[defName] = enabled;
-            
+
             // Немедленно обновляем кэш в DroneSpawnManager
             DroneSpawnManager.RefreshDroneState(defName, enabled);
         }
@@ -93,8 +94,8 @@ namespace MoreHunterDrones
         {
             Scribe_Collections.Look(ref droneEnabledStates, "droneEnabledStates", LookMode.Value, LookMode.Value);
             base.ExposeData();
-            
-            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) // Проверяем после загрузки
             {
                 InitializeDefaultDrones();
                 // Обновляем DroneSpawnManager после загрузки
@@ -125,7 +126,7 @@ namespace MoreHunterDrones
             
             // Используем рефлексию для получения всех полей из DronPawnsKindDefOf
             var fields = typeof(DronPawnsKindDefOf).GetFields(BindingFlags.Public | BindingFlags.Static);
-            
+
             foreach (var field in fields)
             {
                 if (field.FieldType == typeof(PawnKindDef))
@@ -182,8 +183,8 @@ namespace MoreHunterDrones
             listingStandard.Begin(inRect); // начинаем новый список
 
             // Заголовок
-            //Text.Font = GameFont.Medium;
-            //listingStandard.Label("Включённые дроны:");
+            Text.Font = GameFont.Medium;
+            listingStandard.Label("Включённые дроны:"); // Перевод и указать то что это спавн в локациях
             Text.Font = GameFont.Small;
 
             listingStandard.Gap(12f);
@@ -202,6 +203,17 @@ namespace MoreHunterDrones
             int rowsCount = Mathf.CeilToInt((float)allDrones.Count / COLUMNS_COUNT);
 
             // Создаем область для прокрутки
+            //┌─────────────────────────────────┐ ← scrollRect(видимая область, макс 350px)
+            //│ ┌─────────────────────────────┐ │ 
+            //│ │     Drone 1[✓]              │ │ ← viewRect(виртуальная область)
+            //│ │     Drone 2[✓]              │ │   может быть больше scrollRect
+            //│ │     Drone 3[ ]              │ │
+            //│ │     Drone 4[✓]              │ │
+            //│ │     ...                     │ │
+            //│ │     Drone N[]               │ │ ← если дронов много, появится
+            //│ └─────────────────────────────┘ │   полоса прокрутки
+            //└─────────────────────────────────┘
+            //                                 ▲ 16px для скроллбара
             float totalHeight = rowsCount * ROW_HEIGHT + 20f;
             Rect scrollRect = listingStandard.GetRect(Mathf.Min(350f, totalHeight));
             Rect viewRect = new Rect(0f, 0f, scrollRect.width - 16f, totalHeight);
@@ -211,7 +223,7 @@ namespace MoreHunterDrones
 
             // Рассчитываем ширину каждого столбца
             float columnWidth = (viewRect.width - COLUMN_SPACING * (COLUMNS_COUNT - 1)) / COLUMNS_COUNT;
-            
+
             // Отрисовываем дронов в 2 столбца
             for (int row = 0; row < rowsCount; row++)
             {
@@ -241,6 +253,20 @@ namespace MoreHunterDrones
         // Метод для отрисовки строки с информацией о дроне
         private void DrawDroneRow(Rect rect, DroneInfo drone)
         {
+            bool isEnabled = settings.IsDroneEnabled(drone.defName);
+            
+            // Проверяем клик по всей строке
+            if (Widgets.ButtonInvisible(rect))
+            {
+                settings.SetDroneEnabled(drone.defName, !isEnabled);
+            }
+
+            // Подсветка при наведении мыши на всю строку
+            if (Mouse.IsOver(rect))
+            {
+                Widgets.DrawHighlight(rect);
+            }
+
             // Иконка дрона
             Rect iconRect = new Rect(rect.x + 5f, rect.y + (rect.height - ICON_SIZE) / 2f, ICON_SIZE, ICON_SIZE);
 
@@ -271,7 +297,7 @@ namespace MoreHunterDrones
             }
 
             // Название дрона (с учетом доступной ширины столбца)
-            float availableWidth = rect.width - iconRect.width - 80f; // 80f для чекбокса и отступов
+            float availableWidth = rect.width - iconRect.width - 60f; // 60f для чекбокса и отступов
             Rect labelRect = new Rect(iconRect.xMax + 10f, rect.y, availableWidth, rect.height);
 
             // Обрезаем текст если он слишком длинный
@@ -288,28 +314,27 @@ namespace MoreHunterDrones
 
             Widgets.Label(labelRect, displayText);
 
-            // Чекбокс включения/выключения
-            Rect checkboxRect = new Rect(rect.xMax - 30f, rect.y + (rect.height - 24f) / 2f, 24f, 24f);
-            bool isEnabled = settings.IsDroneEnabled(drone.defName);
-            bool newEnabled = isEnabled;
+            // Иконка состояния: галочка или крестик
+            Rect statusRect = new Rect(rect.xMax - 30f, rect.y + (rect.height - 24f) / 2f, 24f, 24f);
 
-            Widgets.Checkbox(checkboxRect.position, ref newEnabled, 24f);
-
-            if (newEnabled != isEnabled)
+            if (isEnabled)
             {
-                settings.SetDroneEnabled(drone.defName, newEnabled);
+                // Включен - рисуем зеленую галочку
+                GUI.DrawTexture(statusRect, Widgets.CheckboxOnTex);
+            }
+            else
+            {
+                // Выключен - рисуем красный крестик
+                Color originalColor = GUI.color;
+                GUI.color = Color.red;
+                GUI.DrawTexture(statusRect, TexButton.CloseXSmall);
+                GUI.color = originalColor;
             }
 
-            // Подсветка при наведении мыши
-            if (Mouse.IsOver(rect))
+            // Показываем полное название в tooltip если оно было сокращено
+            if (displayText != drone.label && Mouse.IsOver(rect))
             {
-                Widgets.DrawHighlight(rect);
-                
-                // Показываем полное название в tooltip если оно было сокращено
-                if (displayText != drone.label)
-                {
-                    TooltipHandler.TipRegion(rect, drone.label);
-                }
+                TooltipHandler.TipRegion(rect, drone.label);
             }
         }
 
