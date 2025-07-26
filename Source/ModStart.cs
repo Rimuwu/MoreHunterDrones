@@ -14,7 +14,7 @@ namespace MoreHunterDrones
                 harmony.PatchAll();
 
                 // Инициализируем систему управления дронами
-                DroneSpawnManager.Initialize();
+                //DroneSpawnManager.Initialize();
 
                 Log.Message("[MoreHunterDrones] Mod initialized with dynamic drone control system");
             }

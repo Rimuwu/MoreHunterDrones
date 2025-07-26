@@ -87,7 +87,7 @@ namespace MoreHunterDrones
             droneEnabledStates[defName] = enabled;
 
             // Немедленно обновляем кэш в DroneSpawnManager
-            DroneSpawnManager.RefreshDroneState(defName, enabled);
+            //DroneSpawnManager.RefreshDroneState(defName, enabled);
         }
 
         public override void ExposeData()
@@ -99,7 +99,7 @@ namespace MoreHunterDrones
             {
                 InitializeDefaultDrones();
                 // Обновляем DroneSpawnManager после загрузки
-                DroneSpawnManager.RefreshAllDroneStates();
+                //DroneSpawnManager.RefreshAllDroneStates();
             }
         }
     }
