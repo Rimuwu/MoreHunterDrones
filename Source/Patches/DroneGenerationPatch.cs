@@ -1,75 +1,146 @@
 using HarmonyLib;
 using RimWorld;
-using RimWorld.SketchGen;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
 namespace MoreHunterDrones.Patches
 {
-    // Патчи для детального отслеживания генерации содержимого комнат
-    // Эти патчи показывают, какие части (parts) создаются в каждой комнате
-
-    // 1. Основной патч для LayoutRoomDef.ResolveContents - здесь решается, что будет в комнате
-    [HarmonyPatch(typeof(LayoutRoomDef), "ResolveContents")]
-    public static class LayoutRoomDefResolveContentsPatch
+    [HarmonyPatch(typeof(RoomContentsWorker), "TrySpawnParts")]
+    public class RoomContentsWorker_Patch
     {
-        public static void Prefix(LayoutRoomDef __instance, Map map, LayoutRoom room, float? threatPoints, Faction faction)
+        [HarmonyPrefix]
+        public static bool TrySpawnParts(RoomContentsWorker __instance, Map map, LayoutRoom room, Faction faction, float? threatPoints, bool post)
         {
-            if (!Prefs.DevMode) return;
+            // Получаем определение комнаты
+            var roomDef = __instance.RoomDef;
+            if (roomDef == null) return true;
 
-            // Логируем все parts, которые будут созданы
-            if (__instance.parts != null && __instance.parts.Count > 0)
+            // Базовые очки угрозы
+            float threatPointsValue = threatPoints ?? 300f;
+
+            if (threatPoints.HasValue && roomDef.threatPointsScaleCurve != null)
             {
-                Log.Message($"[RoomGen] Комната содержит {__instance.parts.Count} частей:");
-                for (int i = 0; i < __instance.parts.Count; i++)
+                threatPointsValue = roomDef.threatPointsScaleCurve.Evaluate(threatPoints.Value);
+            }
+
+            // Получаем части комнаты через приватный метод PartParms
+            var partParmsMethod = typeof(RoomContentsWorker).GetMethod("PartParms",
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+
+            if (partParmsMethod != null)
+            {
+                var partParms = (IEnumerable<LayoutPartParms>)partParmsMethod.Invoke(__instance, new object[] { room });
+
+                foreach (LayoutPartParms partParm in partParms)
                 {
-                    var part = __instance.parts[i];
-                    if (part != null)
+                    if (partParm?.def?.Worker == null) continue;
+
+                    // Проверяем, должна ли эта часть заполняться на текущем этапе
+                    if (partParm.def.Worker.FillOnPost == post)
                     {
-                        Log.Message($"[RoomGen]   Part {i + 1}: {part.GetType().Name}");
-                        LogPartDetails(part, i + 1);
+                        // Проверяем, является ли это дроном-охотником
+                        bool isHunterDronePart = partParm.def.defName.StartsWith("HunterDrone");
+
+                        // Если это дрон-охотник, проверяем настройки
+                        if (isHunterDronePart)
+                        {
+                            // Пытаемся определить тип дрона по defName части
+                            string droneDefName = GetDroneDefNameFromPart(partParm.def.defName);
+                            
+                            // Если удалось определить тип дрона, проверяем настройки
+                            if (!string.IsNullOrEmpty(droneDefName) && !HunterDroneMod.IsDroneEnabled(droneDefName))
+                            {
+                                // Дрон отключен в настройках - пропускаем его
+                                continue;
+                            }
+                        }
+
+                        int spawnCount = 1;
+
+                        // Определяем количество для спавна
+                        if (partParm.countRange != IntRange.Invalid)
+                        {
+                            spawnCount = partParm.countRange.RandomInRange;
+                        }
+                        else
+                        {
+                            // Проверяем шанс спавна
+                            if (!Rand.Chance(partParm.chance))
+                            {
+                                continue;
+                            }
+                        }
+
+                        // Определяем эффективные очки угрозы
+                        float effectiveThreatPoints = threatPointsValue;
+                        if (partParm.threatPointsRange != IntRange.Invalid)
+                        {
+                            effectiveThreatPoints = partParm.threatPointsRange.RandomInRange;
+                        }
+
+                        // Спавним части
+                        for (int i = 0; i < spawnCount; i++)
+                        {
+                            try
+                            {
+                                partParm.def.Worker.FillRoom(map, room, faction, effectiveThreatPoints);
+                            }
+                            catch (System.Exception ex)
+                            {
+                                Log.Error($"[MoreHunterDrones] Ошибка при заполнении комнаты частью {partParm.def?.defName}: {ex.Message}");
+                            }
+                        }
                     }
                 }
             }
 
+            // Возвращаем false, чтобы пропустить оригинальный метод
+            return false;
         }
 
-        // Детальное логирование информации о части комнаты (безопасная версия)
-        private static void LogPartDetails(LayoutPartParms part, int partNumber)
+        /// Пытается определить defName дрона по названию части комнаты
+        /// <param name="partDefName">Название части комнаты</param>
+        /// <returns>DefName дрона или null, если не удалось определить</returns>
+        private static string GetDroneDefNameFromPart(string partDefName)
         {
-            if (part == null) return;
+            if (string.IsNullOrEmpty(partDefName))
+                return null;
 
-            // Логируем только базовую информацию о типе части
-            Log.Message($"[RoomGen]     - Тип части: {part.GetType().Name}");
-
-            // Безопасное логирование полей через рефлексию
-            var partType = part.GetType();
-            var fields = partType.GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-
-            foreach (var field in fields)
+            // Маппинг частей комнат на типы дронов
+            // Это нужно адаптировать под ваши реальные названия частей
+            var partToDroneMapping = new Dictionary<string, string>
             {
-                try
+                { "HunterDroneToxic", "Drone_HunterToxic" },
+                { "HunterDroneAntigrainWarhead", "Drone_HunterAntigrainWarhead" },
+                { "HunterDroneIncendiary", "Drone_HunterIncendiary" },
+                { "HunterDroneEMP", "Drone_HunterEMP" },
+                { "HunterDroneSmoke", "Drone_HunterSmoke" }
+            };
+
+            // Прямое совпадение
+            if (partToDroneMapping.TryGetValue(partDefName, out string droneDefName))
+            {
+                return droneDefName;
+            }
+
+            // Поиск по частичному совпадению
+            foreach (var mapping in partToDroneMapping)
+            {
+                if (partDefName.Contains(mapping.Key) || mapping.Key.Contains(partDefName))
                 {
-                    var value = field.GetValue(part);
-                    if (value != null)
-                    {
-                        // Логируем только простые типы для избежания ошибок
-                        if (field.FieldType.IsPrimitive || field.FieldType == typeof(string) || field.FieldType.IsEnum)
-                        {
-                            Log.Message($"[RoomGen]     - {field.Name}: {value}");
-                        }
-                        else if (value is Def def)
-                        {
-                            Log.Message($"[RoomGen]     - {field.Name}: {def.defName}");
-                        }
-                    }
-                }
-                catch
-                {
-                    // Игнорируем ошибки получения значений полей
+                    return mapping.Value;
                 }
             }
+
+            // Если не удалось найти точное совпадение, попробуем извлечь тип из названия
+            if (partDefName.StartsWith("HunterDrone"))
+            {
+                string droneType = partDefName.Substring("HunterDrone".Length);
+                return $"Drone_Hunter{droneType}";
+            }
+
+            return null;
         }
     }
 }

@@ -50,6 +50,7 @@ namespace MoreHunterDrones.Jobs
             {
                 initAction = () =>
                 {
+                    Log.Message($"[ChargeDronePack] Этап: Поиск следующего ингредиента (pawn={pawn}, job={job})");
                     // Если все ингредиенты уже собраны, переходим к процессу зарядки
                     if (AllIngredientsCollected())
                     {
@@ -70,15 +71,21 @@ namespace MoreHunterDrones.Jobs
 
             // ========== TOIL 2: ДВИЖЕНИЕ К НАЙДЕННОМУ ПРЕДМЕТУ ==========
             // Используем стандартный Toil для движения к объекту, указанному в targetB
-            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch)
+            var gotoToil = Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch)
                 .FailOnDespawnedNullOrForbidden(TargetIndex.B); // Прерываем работу, если объект исчез или запрещен
+            gotoToil.initAction += () =>
+            {
+                Log.Message($"[ChargeDronePack] Этап: Движение к предмету (pawn={pawn}, targetB={job.targetB.Thing})");
+            };
+            yield return gotoToil;
 
             // ========== TOIL 3: ПОДБОР ПРЕДМЕТА ==========
             // Этот Toil забирает нужное количество предмета и помещает его в инвентарь персонажа
-            yield return new Toil
+            var pickUpToil = new Toil
             {
                 initAction = () =>
                 {
+                    Log.Message($"[ChargeDronePack] Этап: Подбор предмета (pawn={pawn}, targetB={job.targetB.Thing})");
                     Thing targetThing = job.targetB.Thing; // Получаем целевой предмет
                     if (targetThing != null && targetThing.Spawned)
                     {
@@ -106,25 +113,32 @@ namespace MoreHunterDrones.Jobs
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
             };
+            yield return pickUpToil;
 
             // ========== TOIL 4: ОЖИДАНИЕ (ПРОЦЕСС ЗАРЯДКИ) ==========
             // Имитирует процесс зарядки с прогресс-баром
             waitToil = Toils_General.Wait(1200).WithProgressBarToilDelay(TargetIndex.A);
             // 1200 тиков ≈ 20 секунд в игре (60 тиков = 1 секунда)
             // WithProgressBarToilDelay показывает прогресс-бар над targetA (дрон-паком)
+            waitToil.initAction += () =>
+            {
+                Log.Message($"[ChargeDronePack] Этап: Ожидание/зарядка (pawn={pawn}, targetA={job.targetA.Thing})");
+            };
             yield return waitToil;
 
             // ========== TOIL 5: ЗАВЕРШЕНИЕ ЗАРЯДКИ ==========
             // Финальный Toil, который завершает процесс зарядки
-            yield return new Toil
+            var finishToil = new Toil
             {
                 initAction = () =>
                 {
+                    Log.Message($"[ChargeDronePack] Этап: Завершение зарядки (pawn={pawn}, targetA={job.targetA.Thing})");
                     // Вызываем метод завершения зарядки в компоненте
                     ChargeComp?.CompleteChargeProcess(pawn);
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
             };
+            yield return finishToil;
         }
 
         /// Проверяет, все ли необходимые ингредиенты собраны в инвентаре 
