@@ -65,14 +65,15 @@
     <Compile Include="Jobs\MyJobsDefOf.cs" />
     <Compile Include="ModSettings.cs" />
     <Compile Include="ModStart.cs" />
+    <Compile Include="Patches\DroneGenerationPatch.cs" />
+    <Compile Include="Patches\RoomGenerationPatches.cs" />
+    <Compile Include="Patches\SpawnLoggingPatch.cs" />
     <Compile Include="PawnKind\DronPawnsKindDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThingDef\DronThingDefs.cs" />
     <Compile Include="Verbs\DronePack_DownloadHunters.cs" />
     <Compile Include="Verbs\DronePack_ShotHunters.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Patches\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
