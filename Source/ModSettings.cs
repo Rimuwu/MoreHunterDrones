@@ -182,10 +182,14 @@ namespace MoreHunterDrones
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(inRect); // начинаем новый список
 
+            listingStandard.GapLine(ROW_HEIGHT);
+
             // Заголовок
             Text.Font = GameFont.Medium;
-            listingStandard.Label("Включённые дроны:"); // Перевод и указать то что это спавн в локациях
+            listingStandard.Label("MoreHunterDrones.StructureSpawnTitle".Translate()); // Перевод и указать то что это спавн в локациях
             Text.Font = GameFont.Small;
+            // Описание
+            listingStandard.Label("MoreHunterDrones.StructureSpawnDesc".Translate());
 
             listingStandard.Gap(12f);
 

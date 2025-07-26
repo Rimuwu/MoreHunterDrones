@@ -16,4 +16,7 @@
     <MoreHunterDrones_InsufficientIngredients>Колонист не может нести все необходимые ингредиенты — это слишком тяжело!</MoreHunterDrones_InsufficientIngredients>
     <MoreHunterDrones_CannotCollectItems>Колонист не может собрать все необходимые предметы для создания нового охотника.</MoreHunterDrones_CannotCollectItems>
 
+    <MoreHunterDrones.StructureSpawnTitle>Спавн дронов-охотников</MoreHunterDrones.StructureSpawnTitle>
+    <MoreHunterDrones.StructureSpawnDesc>Настройка отвечает за то, какие дроны-охотники будут появляться в игре. Не влияет на то, какие дроны-охотники будут доступны для создания. Перезагрузка не требуется.</MoreHunterDrones.StructureSpawnDesc>
+
 </LanguageData>

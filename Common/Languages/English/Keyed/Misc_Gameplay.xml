@@ -16,4 +16,7 @@
     <MoreHunterDrones_InsufficientIngredients>The colonist cannot carry all the required ingredients — it's too heavy!</MoreHunterDrones_InsufficientIngredients>
     <MoreHunterDrones_CannotCollectItems>The colonist cannot collect all the items needed to create a new hunter.</MoreHunterDrones_CannotCollectItems>
 
+    <MoreHunterDrones.StructureSpawnTitle>Hunter Drone Spawn</MoreHunterDrones.StructureSpawnTitle>
+    <MoreHunterDrones.StructureSpawnDesc>This setting determines which hunter drones will spawn in the game. It does not affect which hunter drones are available for crafting. No reload is required.</MoreHunterDrones.StructureSpawnDesc>
+
 </LanguageData>
