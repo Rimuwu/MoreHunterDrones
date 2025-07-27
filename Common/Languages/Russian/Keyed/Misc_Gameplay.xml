@@ -7,7 +7,7 @@
 
     <MoreHunterDrones_ChargeIngredientsDesc>Необходимые ингредиенты для зарядки рюкзака:</MoreHunterDrones_ChargeIngredientsDesc>
 
-    <MoreHunterDrones_VerbChargeDesc>Создание нового дрона внутри рюкзака для повторного использования.</MoreHunterDrones_VerbChargeDesc>
+    <MoreHunterDrones_ChargePackDesc>Создание нового дрона внутри рюкзака для повторного использования.</MoreHunterDrones_ChargePackDesc>
 
     <MoreHunterDrones_SuccessMessage>Дрон успешно создан внутри рюкзака.</MoreHunterDrones_SuccessMessage>
 
@@ -18,5 +18,7 @@
 
     <MoreHunterDrones.StructureSpawnTitle>Спавн дронов-охотников</MoreHunterDrones.StructureSpawnTitle>
     <MoreHunterDrones.StructureSpawnDesc>Настройка отвечает за то, какие дроны-охотники будут появляться в игре. Не влияет на то, какие дроны-охотники будут доступны для создания. Перезагрузка не требуется.</MoreHunterDrones.StructureSpawnDesc>
+
+    <MoreHunterDrones.ChargeLabel>Зарядить рюкзак</MoreHunterDrones.ChargeLabel>
 
 </LanguageData>
