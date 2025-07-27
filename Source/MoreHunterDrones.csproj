@@ -71,7 +71,6 @@
     <Compile Include="PawnKind\DronPawnsKindDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThingDef\DronThingDefs.cs" />
-    <Compile Include="Verbs\DronePack_Charge.cs" />
     <Compile Include="Verbs\DronePack_Launch.cs" />
   </ItemGroup>
   <ItemGroup />
