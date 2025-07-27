@@ -26,38 +26,38 @@ namespace MoreHunterDrones.Verbs
             return canUse;
         }
 
-        protected override bool TryCastShot()
-        {
-            // Проверка, можно ли произвести выстрел 1 раз, после нажатия
-            if (base.TryCastShot())
-            {
-                if (burstShotsLeft <= 1)
-                {
-                    SelfConsume();
-                }
-                return true;
-            }
-            if (burstShotsLeft < base.BurstShotCount)
-            {
-                SelfConsume();
-            }
-            return false;
-        }
+        //protected override bool TryCastShot()
+        //{
+        //    // Проверка, можно ли произвести выстрел 1 раз, после нажатия
+        //    if (base.TryCastShot())
+        //    {
+        //        if (burstShotsLeft <= 1)
+        //        {
+        //            SelfConsume();
+        //        }
+        //        return true;
+        //    }
+        //    if (burstShotsLeft < base.BurstShotCount)
+        //    {
+        //        SelfConsume();
+        //    }
+        //    return false;
+        //}
 
-        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
-        {
-            // Проверка, можно ли выбрать цель для атаки (каждый тик) (до вызова OnGUI)
+        //public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+        //{
+        //    // Проверка, можно ли выбрать цель для атаки (каждый тик) (до вызова OnGUI)
 
-            if (!base.ValidateTarget(target, showMessages: true))
-            {
-                return false;
-            }
-            if (target.Cell.GetFirstBuilding(Find.CurrentMap) == null)
-            {
-                return target.Cell.Standable(Find.CurrentMap);
-            }
-            return false;
-        }
+        //    if (!base.ValidateTarget(target, showMessages: true))
+        //    {
+        //        return false;
+        //    }
+        //    if (target.Cell.GetFirstBuilding(Find.CurrentMap) == null)
+        //    {
+        //        return target.Cell.Standable(Find.CurrentMap);
+        //    }
+        //    return false;
+        //}
 
         public override void OnGUI(LocalTargetInfo target)
         {
@@ -71,16 +71,18 @@ namespace MoreHunterDrones.Verbs
             Texture2D UIIcon = (target.Cell.InBounds(currentMap) ? (canAttack ? TexCommand.Attack : TexCommand.CannotShoot) : TexCommand.CannotShoot);
             GenUI.DrawMouseAttachment(UIIcon);
         }
-        public override void Notify_EquipmentLost()
-        {
-            // Вроде как, если отменено, но не смог воспроизвести
 
-            base.Notify_EquipmentLost();
-            if (state == VerbState.Bursting && burstShotsLeft < base.BurstShotCount)
-            {
-                SelfConsume();
-            }
-        }
+        //public override void Notify_EquipmentLost()
+        //{
+        //    // Вроде как, если отменено, но не смог воспроизвести
+
+        //    base.Notify_EquipmentLost();
+        //    if (state == VerbState.Bursting && burstShotsLeft < base.BurstShotCount)
+        //    {
+        //        SelfConsume();
+        //    }
+        //}
+
         public void SelfConsume()
         {
             // Конец выполнения действия
@@ -92,13 +94,14 @@ namespace MoreHunterDrones.Verbs
             }
 
         }
-        public override void OrderForceTarget(LocalTargetInfo target)
-        {
-            // Вызывается при выборе цели для атаки (нажата клавиша лкм)
 
-            Job job = JobMaker.MakeJob(JobDefOf.UseVerbOnThingStaticReserve, target);
-            job.verbToUse = this;
-            CasterPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-        }
+        //public override void OrderForceTarget(LocalTargetInfo target)
+        //{
+        //    // Вызывается при выборе цели для атаки (нажата клавиша лкм)
+
+        //    Job job = JobMaker.MakeJob(JobDefOf.UseVerbOnThingStaticReserve, target);
+        //    job.verbToUse = this;
+        //    CasterPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+        //}
     }
 }
