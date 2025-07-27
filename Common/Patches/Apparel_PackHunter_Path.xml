@@ -18,6 +18,7 @@
           <onlyManualCast>true</onlyManualCast>
           <hasStandardCommand>true</hasStandardCommand>
           <targetable>false</targetable>
+          <violent>false</violent>
           <commandIcon>UI/ChargePack</commandIcon>
           <defaultCooldownTime>0</defaultCooldownTime>
           <warmupTime>0.0</warmupTime>
@@ -26,6 +27,7 @@
           <muzzleFlashScale>0</muzzleFlashScale>
           <burstShotCount>1</burstShotCount>
           <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+          <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
       </li>
     </value>
   </Operation>
