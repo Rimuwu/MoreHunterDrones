@@ -133,6 +133,10 @@
               <key>Steel</key>
               <value>30</value>
             </li>
+            <li>
+              <key>Shell_Toxic</key>
+              <value>1</value>
+            </li>
           </chargeIngredients>
       </li>
     </comps>
