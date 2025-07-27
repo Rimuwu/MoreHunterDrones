@@ -2,6 +2,7 @@
 <LanguageData>
 
   <Apparel_PackHunter.verbs.Verb_ChargeDronePack.label>Зарядить ранец</Apparel_PackHunter.verbs.Verb_ChargeDronePack.label>
+  <Apparel_PackHunter.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>заряд</Apparel_PackHunter.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>
 
 
   <Apparel_PackHunter_Toxic.label>Охотничий токсичный ранец</Apparel_PackHunter_Toxic.label>
