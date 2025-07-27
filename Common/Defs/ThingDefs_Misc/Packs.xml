@@ -162,7 +162,7 @@
     </tradeTags>
   </ThingDef>
 
-  <ThingDef ParentName="BaseGrenadeProjectile">
+  <ThingDef ParentName="BaseGrenadeProjectile" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>Grenade_HunterPackToxic</defName>
     <label>hunter toxic pack capsule</label>
     <thingClass>Projectile_SpawnsPawnZeroAge</thingClass>

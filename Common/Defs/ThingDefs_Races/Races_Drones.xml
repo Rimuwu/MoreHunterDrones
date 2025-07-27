@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="BaseDrone">
+  <ThingDef ParentName="BaseDrone" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>Drone_HunterToxic</defName>
     <label>toxic hunter drone</label>
     <description>An automated kill drone. The toxic hunter drone pursues its target and detonates when it gets close, releasing a cloud of toxic gas.</description>

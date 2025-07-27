@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <RoomPart_ThingDef>
+  <RoomPart_ThingDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>HunterDroneToxic</defName>
     <workerClass>RoomPart_CornerThing</workerClass>
-    <thingDef>
-      <li Class="IfModActive">
-        <modName>Ludeon.RimWorld.Biotech</modName>
-        <value>Drone_HunterToxic_Trap</value>
-      </li>
-      <li Class="Else">
-        <value>DroneHunterTrap</value>
-      </li>
-    </thingDef>
+    <thingDef>Drone_HunterToxic_Trap</thingDef>
   </RoomPart_ThingDef>
 
   <RoomPart_ThingDef>

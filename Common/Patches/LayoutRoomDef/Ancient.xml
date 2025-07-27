@@ -7,7 +7,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientStockpileStockpile"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.15</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.15</HunterDroneToxic>
           <HunterDroneAntigrainWarhead>0.1</HunterDroneAntigrainWarhead>
           <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
           <HunterDroneEMP>0.125</HunterDroneEMP>
@@ -19,7 +19,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientRuinsReactor"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.2</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.2</HunterDroneToxic>
           <HunterDroneAntigrainWarhead>0.15</HunterDroneAntigrainWarhead>
           <HunterDroneIncendiary>0.175</HunterDroneIncendiary>
           <HunterDroneEMP>0.175</HunterDroneEMP>
@@ -31,7 +31,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientEngineRoom"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.175</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.175</HunterDroneToxic>
           <HunterDroneAntigrainWarhead>0.125</HunterDroneAntigrainWarhead>
           <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
           <HunterDroneEMP>0.15</HunterDroneEMP>
@@ -48,7 +48,7 @@
           <parts>
               <HunterDroneEMP>0.15</HunterDroneEMP>
               <HunterDroneSmoke>0.1</HunterDroneSmoke>
-              <HunterDroneToxic>0.075</HunterDroneToxic>
+              <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.075</HunterDroneToxic>
               <HunterDroneIncendiary>0.075</HunterDroneIncendiary>
           </parts>
       </value>
@@ -58,7 +58,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientRuinsSecureRoom"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.125</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.125</HunterDroneToxic>
           <HunterDroneEMP>0.125</HunterDroneEMP>
           <HunterDroneSmoke>0.1</HunterDroneSmoke>
           <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
@@ -71,7 +71,7 @@
       <value>
           <HunterDroneSmoke>0.175</HunterDroneSmoke>
           <HunterDroneEMP>0.175</HunterDroneEMP>
-          <HunterDroneToxic>0.25</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.25</HunterDroneToxic>
       </value>
   </Operation>
 
@@ -81,7 +81,7 @@
       <value>
           <HunterDroneSmoke>0.075</HunterDroneSmoke>
           <HunterDroneEMP>0.075</HunterDroneEMP>
-          <HunterDroneToxic>0.05</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.05</HunterDroneToxic>
       </value>
   </Operation>
 
@@ -89,7 +89,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientWeaponStorage"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.15</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.15</HunterDroneToxic>
           <HunterDroneAntigrainWarhead>0.1</HunterDroneAntigrainWarhead>
           <HunterDroneIncendiary>0.125</HunterDroneIncendiary>
           <HunterDroneEMP>0.125</HunterDroneEMP>
@@ -116,7 +116,7 @@
       <value>
           <parts>
               <HunterDroneSmoke>0.025</HunterDroneSmoke>
-              <HunterDroneToxic>0.025</HunterDroneToxic>
+              <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.025</HunterDroneToxic>
           </parts>
       </value>
   </Operation>
@@ -129,7 +129,7 @@
       <value>
           <HunterDroneAntigrainWarhead>0.175</HunterDroneAntigrainWarhead>
           <HunterDroneIncendiary>0.2</HunterDroneIncendiary>
-          <HunterDroneToxic>0.1</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.1</HunterDroneToxic>
           <HunterDroneSmoke>0.125</HunterDroneSmoke>
       </value>
   </Operation>
@@ -139,7 +139,7 @@
       <xpath>Defs/LayoutRoomDef[defName="AncientChemfuelRefineryProductionRoom"]/parts</xpath>
       <value>
           <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
-          <HunterDroneToxic>0.125</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.125</HunterDroneToxic>
           <HunterDroneEMP>0.1</HunterDroneEMP>
           <HunterDroneSmoke>0.075</HunterDroneSmoke>
       </value>
@@ -149,7 +149,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientWarehouseStorageRoom"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.125</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.125</HunterDroneToxic>
           <HunterDroneSmoke>0.1</HunterDroneSmoke>
           <HunterDroneEMP>0.075</HunterDroneEMP>
           <HunterDroneIncendiary>0.075</HunterDroneIncendiary>
@@ -160,7 +160,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientRuinsReactorCorridor"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.175</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.175</HunterDroneToxic>
           <HunterDroneAntigrainWarhead>0.125</HunterDroneAntigrainWarhead>
           <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
           <HunterDroneEMP>0.15</HunterDroneEMP>
@@ -172,7 +172,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientRuinsShelfWithLootRoom_Underground"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.1</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.1</HunterDroneToxic>
           <HunterDroneSmoke>0.075</HunterDroneSmoke>
           <HunterDroneEMP>0.075</HunterDroneEMP>
           <HunterDroneIncendiary>0.05</HunterDroneIncendiary>
@@ -184,7 +184,7 @@
       <xpath>Defs/LayoutRoomDef[defName="AncientRuinsChemfuelWorkshop"]/parts</xpath>
       <value>
           <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
-          <HunterDroneToxic>0.1</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.1</HunterDroneToxic>
           <HunterDroneSmoke>0.1</HunterDroneSmoke>
           <HunterDroneEMP>0.075</HunterDroneEMP>
       </value>
@@ -195,7 +195,7 @@
       <xpath>Defs/LayoutRoomDef[defName="AncientRuinsChemfuelBarrelRoom"]/parts</xpath>
       <value>
           <HunterDroneIncendiary>0.125</HunterDroneIncendiary>
-          <HunterDroneToxic>0.075</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.075</HunterDroneToxic>
           <HunterDroneSmoke>0.1</HunterDroneSmoke>
           <HunterDroneEMP>0.05</HunterDroneEMP>
       </value>
@@ -206,7 +206,7 @@
       <xpath>Defs/LayoutRoomDef[defName="AncientChemfuelStorage"]/parts</xpath>
       <value>
           <HunterDroneIncendiary>0.125</HunterDroneIncendiary>
-          <HunterDroneToxic>0.075</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.075</HunterDroneToxic>
           <HunterDroneSmoke>0.1</HunterDroneSmoke>
           <HunterDroneEMP>0.05</HunterDroneEMP>
       </value>
@@ -216,7 +216,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientRuinsReactorCorpseRoom"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.2</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.2</HunterDroneToxic>
           <HunterDroneAntigrainWarhead>0.1</HunterDroneAntigrainWarhead>
           <HunterDroneIncendiary>0.125</HunterDroneIncendiary>
           <HunterDroneSmoke>0.125</HunterDroneSmoke>
@@ -228,7 +228,7 @@
       <xpath>Defs/LayoutRoomDef[defName="AncientChemfuelRefineryWorkshop"]/parts</xpath>
       <value>
           <HunterDroneIncendiary>0.1</HunterDroneIncendiary>
-          <HunterDroneToxic>0.075</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.075</HunterDroneToxic>
           <HunterDroneSmoke>0.075</HunterDroneSmoke>
           <HunterDroneEMP>0.05</HunterDroneEMP>
       </value>
@@ -238,7 +238,7 @@
   <Operation Class="PatchOperationAdd">
       <xpath>Defs/LayoutRoomDef[defName="AncientWarehousePalletRoom"]/parts</xpath>
       <value>
-          <HunterDroneToxic>0.1</HunterDroneToxic>
+          <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.1</HunterDroneToxic>
           <HunterDroneSmoke>0.125</HunterDroneSmoke>
           <HunterDroneEMP>0.075</HunterDroneEMP>
           <HunterDroneIncendiary>0.05</HunterDroneIncendiary>
@@ -250,7 +250,7 @@
       <xpath>Defs/LayoutRoomDef[defName="AncientStockpileSecurityRoom"]/parts</xpath>
       <value>
           <parts>
-              <HunterDroneToxic>0.175</HunterDroneToxic>
+              <HunterDroneToxic MayRequire="Ludeon.RimWorld.Biotech">0.175</HunterDroneToxic>
               <HunterDroneAntigrainWarhead>0.125</HunterDroneAntigrainWarhead>
               <HunterDroneIncendiary>0.15</HunterDroneIncendiary>
               <HunterDroneEMP>0.175</HunterDroneEMP>
