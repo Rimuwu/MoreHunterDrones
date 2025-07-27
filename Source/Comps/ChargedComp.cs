@@ -24,97 +24,6 @@ namespace MoreHunterDrones.Comps
 
         public override string GizmoExtraLabel => LabelRemaining;
 
-        public override void PostPostMake()
-        {
-            base.PostPostMake();
-            remainingCharges = MaxCharges;
-        }
-
-        public override string CompInspectStringExtra()
-        {
-            try
-            {
-                var chargeNoun = Props?.ChargeNounArgument;
-                string chargeNounStr = chargeNoun?.ToString() ?? "charges";
-                return "ChargesRemaining".Translate(chargeNounStr) + ": " + LabelRemaining;
-            }
-            catch (System.Exception ex)
-            {
-                Log.Warning($"[MoreHunterDrones] Error in CompInspectStringExtra: {ex.Message}");
-                return "Charges: " + LabelRemaining;
-            }
-        }
-
-        public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
-        {
-            // Безопасно получаем базовыеstatistics
-            var resultStats = new List<StatDrawEntry>();
-            
-            try
-            {
-                IEnumerable<StatDrawEntry> baseStats = base.SpecialDisplayStats();
-                if (baseStats != null)
-                {
-                    foreach (StatDrawEntry item in baseStats)
-                    {
-                        if (item != null)
-                        {
-                            resultStats.Add(item);
-                        }
-                    }
-                }
-            }
-            catch (System.Exception ex)
-            {
-                Log.Warning($"[MoreHunterDrones] Error getting base SpecialDisplayStats: {ex.Message}");
-            }
-
-            // Добавляем нашу статистику с защитой от ошибок
-            try
-            {
-                var chargeNoun = Props?.ChargeNounArgument;
-                string chargeNounStr = chargeNoun?.ToString() ?? "charges";
-                string statName = "Stat_Thing_ReloadChargesRemaining_Name".Translate(chargeNounStr).ToString();
-                string statDesc = "Stat_Thing_ReloadChargesRemaining_Desc".Translate(chargeNounStr).ToString();
-                
-                resultStats.Add(new StatDrawEntry(
-                    StatCategoryDefOf.Apparel, 
-                    statName, 
-                    LabelRemaining, 
-                    statDesc, 
-                    2749
-                ));
-            }
-            catch (System.Exception ex)
-            {
-                Log.Warning($"[MoreHunterDrones] Error creating charge stat entry: {ex.Message}");
-                // Возвращаем базовую статистику без перевода в случае ошибки
-                resultStats.Add(new StatDrawEntry(
-                    StatCategoryDefOf.Apparel, 
-                    "Charges", 
-                    LabelRemaining, 
-                    "Remaining charges", 
-                    2749
-                ));
-            }
-
-            // Возвращаем все статистики
-            foreach (var stat in resultStats)
-            {
-                yield return stat;
-            }
-        }
-
-        public override void PostExposeData()
-        {
-            base.PostExposeData();
-            Scribe_Values.Look(ref remainingCharges, "remainingCharges", -999);
-            if (Scribe.mode == LoadSaveMode.PostLoadInit && remainingCharges == -999)
-            {
-                remainingCharges = MaxCharges;
-            }
-        }
-
         public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
         {
             // Показываем ВСЕ кнопки вербов - пусть каждый верб сам решает через Available()
@@ -133,9 +42,7 @@ namespace MoreHunterDrones.Comps
                             // Добавляем описание ингредиентов к существующему tooltip
                             try
                             {
-                                var chargeNoun = Props?.ChargeNounArgument;
-                                string chargeNounStr = chargeNoun?.ToString() ?? "charges";
-                                string originalDesc = "MoreHunterDrones_VerbChargeDesc".Translate(chargeNounStr);
+                                string originalDesc = "MoreHunterDrones_VerbChargeDesc".Translate(Props?.chargeNoun);
                                 string ingredientsDesc = GetIngredientsDescription(chargeComp);
 
                                 verbCommand.defaultDesc = string.IsNullOrEmpty(originalDesc)
@@ -145,7 +52,7 @@ namespace MoreHunterDrones.Comps
                                 if (RemainingCharges > 0)
                                 {
                                     verbCommand.Disable();
-                                    verbCommand.disabledReason = "MoreHunterDrones_IsCharged".Translate(chargeNounStr);
+                                    verbCommand.disabledReason = "MoreHunterDrones_IsCharged".Translate(Props?.chargeNoun);
                                 }
                             }
                             catch (System.Exception ex)
@@ -160,10 +67,8 @@ namespace MoreHunterDrones.Comps
                         {
                             try
                             {
-                                var chargeNoun = Props?.ChargeNounArgument;
-                                string chargeNounStr = chargeNoun?.ToString() ?? "charges";
                                 verbCommand.Disable();
-                                verbCommand.disabledReason = "MoreHunterDrones_NoCharged".Translate(chargeNounStr);
+                                verbCommand.disabledReason = "MoreHunterDrones_NoCharged".Translate(Props?.chargeNoun);
                             }
                             catch (System.Exception ex)
                             {
@@ -201,9 +106,7 @@ namespace MoreHunterDrones.Comps
             var sb = new StringBuilder();
             try
             {
-                var chargeNoun = Props?.ChargeNounArgument;
-                string chargeNounStr = chargeNoun?.ToString() ?? "charges";
-                string add_text = "MoreHunterDrones_ChargeIngredientsDesc".Translate(chargeNounStr);
+                string add_text = "MoreHunterDrones_ChargeIngredientsDesc".Translate(Props?.chargeNoun);
                 sb.AppendLine(add_text);
             }
             catch (System.Exception ex)
@@ -221,35 +124,6 @@ namespace MoreHunterDrones.Comps
             }
             
             return sb.ToString().TrimEnd();
-        }
-
-        public override string CompTipStringExtra()
-        {
-            try
-            {
-                var chargeNoun = Props?.ChargeNounArgument;
-                string chargeNounStr = chargeNoun?.ToString() ?? "charges";
-                TaggedString taggedString = "Stat_Thing_ReloadChargesRemaining_Name".Translate(chargeNounStr).CapitalizeFirst();
-                return $"\n\n{taggedString}: {RemainingCharges} / {MaxCharges}";
-            }
-            catch (System.Exception ex)
-            {
-                Log.Warning($"[MoreHunterDrones] Error in CompTipStringExtra: {ex.Message}");
-                return $"\n\nCharges: {RemainingCharges} / {MaxCharges}";
-            }
-        }
-
-        public override void UsedOnce()
-        {
-            base.UsedOnce();
-            if (remainingCharges > 0)
-            {
-                remainingCharges--;
-            }
-            if (Props != null && Props.destroyOnEmpty && remainingCharges == 0 && !parent.Destroyed)
-            {
-                parent.Destroy();
-            }
         }
 
         public void AddCharge(int amount = 1)
