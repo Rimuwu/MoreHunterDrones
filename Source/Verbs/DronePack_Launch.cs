@@ -14,7 +14,7 @@ namespace MoreHunterDrones.Verbs
 
         public override bool Available()
         {
-            int charges = CompApparelVerbOwner?.RemainingCharges ?? 0; // предполагаем, что Charges — это свойство с количеством зарядов
+            int charges = CompApparelVerbOwner?.RemainingCharges ?? 0; // свойство с количеством зарядов
 
             bool canUse = charges > 0;
 
