@@ -162,8 +162,14 @@
         <hasStandardCommand>true</hasStandardCommand>
         <targetable>false</targetable>
         <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>120</defaultCooldownTime>
-        </li>
+        <defaultCooldownTime>0</defaultCooldownTime>
+        <warmupTime>0.0</warmupTime>
+        <range>0</range>
+        <requireLineOfSight>false</requireLineOfSight>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      </li>
     </verbs>
     <tradeTags>
       <li>Clothing</li>
@@ -352,8 +358,14 @@
         <hasStandardCommand>true</hasStandardCommand>
         <targetable>false</targetable>
         <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>120</defaultCooldownTime>
-        </li>
+        <defaultCooldownTime>0</defaultCooldownTime>
+        <warmupTime>0.0</warmupTime>
+        <range>0</range>
+        <requireLineOfSight>false</requireLineOfSight>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      </li>
     </verbs>
     <tradeTags>
       <li>Clothing</li>
@@ -542,8 +554,14 @@
         <hasStandardCommand>true</hasStandardCommand>
         <targetable>false</targetable>
         <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>120</defaultCooldownTime>
-        </li>
+        <defaultCooldownTime>0</defaultCooldownTime>
+        <warmupTime>0.0</warmupTime>
+        <range>0</range>
+        <requireLineOfSight>false</requireLineOfSight>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      </li>
     </verbs>
     <tradeTags>
       <li>Clothing</li>
@@ -728,8 +746,14 @@
         <hasStandardCommand>true</hasStandardCommand>
         <targetable>false</targetable>
         <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>120</defaultCooldownTime>
-        </li>
+        <defaultCooldownTime>0</defaultCooldownTime>
+        <warmupTime>0.0</warmupTime>
+        <range>0</range>
+        <requireLineOfSight>false</requireLineOfSight>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      </li>
     </verbs>
     <tradeTags>
       <li>Clothing</li>
@@ -914,8 +938,14 @@
         <hasStandardCommand>true</hasStandardCommand>
         <targetable>false</targetable>
         <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>120</defaultCooldownTime>
-        </li>
+        <defaultCooldownTime>0</defaultCooldownTime>
+        <warmupTime>0.0</warmupTime>
+        <range>0</range>
+        <requireLineOfSight>false</requireLineOfSight>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      </li>
     </verbs>
     <tradeTags>
       <li>Clothing</li>

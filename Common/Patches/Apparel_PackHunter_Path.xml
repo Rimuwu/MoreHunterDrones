@@ -13,14 +13,20 @@
     <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs</xpath>
     <value>
         <li>
-            <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
-            <label>charge pack</label>
-            <onlyManualCast>true</onlyManualCast>
-            <hasStandardCommand>true</hasStandardCommand>
-            <targetable>false</targetable>
-            <commandIcon>UI/ChargePack</commandIcon>
-            <defaultCooldownTime>120</defaultCooldownTime>
-        </li>
+          <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
+          <label>charge pack</label>
+          <onlyManualCast>true</onlyManualCast>
+          <hasStandardCommand>true</hasStandardCommand>
+          <targetable>false</targetable>
+          <commandIcon>UI/ChargePack</commandIcon>
+          <defaultCooldownTime>0</defaultCooldownTime>
+          <warmupTime>0.0</warmupTime>
+          <range>0</range>
+          <requireLineOfSight>false</requireLineOfSight>
+          <muzzleFlashScale>0</muzzleFlashScale>
+          <burstShotCount>1</burstShotCount>
+          <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      </li>
     </value>
   </Operation>
 

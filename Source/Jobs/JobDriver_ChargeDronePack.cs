@@ -191,7 +191,7 @@ namespace MoreHunterDrones.Jobs
                         PathEndMode.ClosestTouch,              // Как близко нужно подойти
                         TraverseParms.For(pawn),               // Параметры передвижения персонажа
                         9999,                                  // Максимальная дистанция поиска
-                        t => !t.IsForbidden(pawn) && t.stackCount > 0 // Условие: не запрещен и не пустой
+                        t => !t.IsForbidden(pawn) || !pawn.CanReach(t, PathEndMode.ClosestTouch, Danger.None) // Условие
                     );
 
                     // Если нашли подходящий предмет

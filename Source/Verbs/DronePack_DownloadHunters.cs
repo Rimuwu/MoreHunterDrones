@@ -81,7 +81,6 @@ namespace MoreHunterDrones.Verbs
 
             // Запустить процесс зарядки через компонент
             chargeComp.StartChargeJob(pawn);
-            
             return true;
         }
     }
