@@ -2,13 +2,14 @@
 <LanguageData>
 
   <Apparel_PackHunter.verbs.Verb_ChargeDronePack.label>Charge pack</Apparel_PackHunter.verbs.Verb_ChargeDronePack.label>
+  <Apparel_PackHunter.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>charge</Apparel_PackHunter.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>
 
 
   <Apparel_PackHunter_Toxic.label>Hunter Toxic Pack</Apparel_PackHunter_Toxic.label>
   <Apparel_PackHunter_Toxic.description>Wearable pack that releases a hunter drone with toxic gas. The drone will approach the target and release toxic gas when within range.</Apparel_PackHunter_Toxic.description>
 
-  <Apparel_PackHunter_Toxic.verbs.Verb_ChargeDronePack.label>Charge pack</Apparel_PackHunter_Toxic.verbs.Verb_ChargeDronePack.label>
   <Apparel_PackHunter_Toxic.verbs.Verb_LaunchDrone.label>Launch drone</Apparel_PackHunter_Toxic.verbs.Verb_LaunchDrone.label>
+  <Apparel_PackHunter_Toxic.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>charge</Apparel_PackHunter_Toxic.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>
 
   <Grenade_HunterPackToxic.label>Hunter Toxic Pack Capsule</Grenade_HunterPackToxic.label>
 
@@ -16,8 +17,8 @@
   <Apparel_PackHunter_AntigrainWarhead.label>Hunter Pack with Antigrain Warhead</Apparel_PackHunter_AntigrainWarhead.label>
   <Apparel_PackHunter_AntigrainWarhead.description>Wearable pack that releases a hunter drone with an antigrain warhead. The drone will find a target and explode with destructive force.</Apparel_PackHunter_AntigrainWarhead.description>
 
-  <Apparel_PackHunter_AntigrainWarhead.verbs.Verb_ChargeDronePack.label>Charge pack</Apparel_PackHunter_AntigrainWarhead.verbs.Verb_ChargeDronePack.label>
   <Apparel_PackHunter_AntigrainWarhead.verbs.Verb_LaunchDrone.label>Launch drone</Apparel_PackHunter_AntigrainWarhead.verbs.Verb_LaunchDrone.label>
+  <Apparel_PackHunter_AntigrainWarhead.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>charge</Apparel_PackHunter_AntigrainWarhead.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>
 
   <Grenade_HunterPackToxic.label>Hunter Pack Capsule with Antigrain Warhead</Grenade_HunterPackToxic.label>
 
@@ -25,8 +26,8 @@
   <Apparel_PackHunter_Incendiary.label>Hunter Pack with Incendiary Trap</Apparel_PackHunter_Incendiary.label>
   <Apparel_PackHunter_Incendiary.description>Wearable pack that releases a hunter drone with an incendiary trap. The drone will find a target and set a trap that ignites the area.</Apparel_PackHunter_Incendiary.description>
 
-  <Apparel_PackHunter_Incendiary.verbs.Verb_ChargeDronePack.label>Charge pack</Apparel_PackHunter_Incendiary.verbs.Verb_ChargeDronePack.label>
   <Apparel_PackHunter_Incendiary.verbs.Verb_LaunchDrone.label>Launch drone</Apparel_PackHunter_Incendiary.verbs.Verb_LaunchDrone.label>
+  <Apparel_PackHunter_Incendiary.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>charge</Apparel_PackHunter_Incendiary.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>
 
   <Grenade_HunterPackToxic.label>Hunter Pack Capsule with Incendiary Trap</Grenade_HunterPackToxic.label>
 
@@ -34,8 +35,8 @@
   <Apparel_PackHunter_EMP.label>Hunter Pack with EMP Trap</Apparel_PackHunter_EMP.label>
   <Apparel_PackHunter_EMP.description>Wearable pack that releases a hunter drone with an EMP trap. The drone will find a target and set a trap that emits a powerful EMP pulse, disabling electronics in the area.</Apparel_PackHunter_EMP.description>
 
-  <Apparel_PackHunter_EMP.verbs.Verb_ChargeDronePack.label>Charge pack</Apparel_PackHunter_EMP.verbs.Verb_ChargeDronePack.label>
   <Apparel_PackHunter_EMP.verbs.Verb_LaunchDrone.label>Launch drone</Apparel_PackHunter_EMP.verbs.Verb_LaunchDrone.label>
+  <Apparel_PackHunter_EMP.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>charge</Apparel_PackHunter_EMP.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>
 
   <Grenade_HunterPackToxic.label>Hunter Pack Capsule with EMP Trap</Grenade_HunterPackToxic.label>
 
@@ -43,8 +44,8 @@
   <Apparel_PackHunter_Smoke.label>Hunter Pack with Smoke Trap</Apparel_PackHunter_Smoke.label>
   <Apparel_PackHunter_Smoke.description>Wearable pack that releases a hunter drone with a smoke trap. The drone will find a target and set a trap that releases a cloud of smoke, reducing visibility in the area.</Apparel_PackHunter_Smoke.description>
 
-  <Apparel_PackHunter_Smoke.verbs.Verb_ChargeDronePack.label>Charge pack</Apparel_PackHunter_Smoke.verbs.Verb_ChargeDronePack.label>
   <Apparel_PackHunter_Smoke.verbs.Verb_LaunchDrone.label>Launch drone</Apparel_PackHunter_Smoke.verbs.Verb_LaunchDrone.label>
+  <Apparel_PackHunter_Smoke.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>charge</Apparel_PackHunter_Smoke.comps.CompApparelVerbOwner_ChargedReloadable.chargeNoun>
 
   <Grenade_HunterPackToxic.label>Hunter Pack Capsule with Smoke Trap</Grenade_HunterPackToxic.label>
 
