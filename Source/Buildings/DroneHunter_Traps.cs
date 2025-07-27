@@ -7,7 +7,7 @@ namespace MoreHunterDrones.Buildings
     public class Building_TrapReleaseHunter_Toxic : Building_TrapReleaseEntity
     {
         protected override int CountToSpawn => 1;
-        protected override PawnKindDef PawnToSpawn => DronPawnsKindDefOf.Drone_HunterToxic;
+        protected override PawnKindDef PawnToSpawn => DronPawnsKindDefOf.Drone_HunterToxic ?? DronPawnsKindDefOf.Drone_HunterIncendiary; // Fallback if Biotech not available
     };
 
     public class Building_TrapReleaseHunter_AntigrainWarhead : Building_TrapReleaseEntity

@@ -9,6 +9,7 @@ using Verse;
 [DefOf]
 public static class DronPawnsKindDefOf
 {
+    [MayRequire("Ludeon.RimWorld.Biotech")]
     public static PawnKindDef Drone_HunterToxic;
 
     public static PawnKindDef Drone_HunterAntigrainWarhead;

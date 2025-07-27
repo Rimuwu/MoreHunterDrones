@@ -12,11 +12,11 @@ namespace MoreHunterDrones.Patches
         [HarmonyPrefix]
         public static bool TrySpawnParts(RoomContentsWorker __instance, Map map, LayoutRoom room, Faction faction, float? threatPoints, bool post)
         {
-            // Получаем определение комнаты
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             var roomDef = __instance.RoomDef;
             if (roomDef == null) return true;
 
-            // Базовые очки угрозы
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             float threatPointsValue = threatPoints ?? 300f;
 
             if (threatPoints.HasValue && roomDef.threatPointsScaleCurve != null)
@@ -24,7 +24,7 @@ namespace MoreHunterDrones.Patches
                 threatPointsValue = roomDef.threatPointsScaleCurve.Evaluate(threatPoints.Value);
             }
 
-            // Получаем части комнаты через приватный метод PartParms
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ PartParms
             var partParmsMethod = typeof(RoomContentsWorker).GetMethod("PartParms",
                 System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
 
@@ -36,50 +36,50 @@ namespace MoreHunterDrones.Patches
                 {
                     if (partParm?.def?.Worker == null) continue;
 
-                    // Проверяем, должна ли эта часть заполняться на текущем этапе
+                    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                     if (partParm.def.Worker.FillOnPost == post)
                     {
-                        // Проверяем, является ли это дроном-охотником
+                        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                         bool isHunterDronePart = partParm.def.defName.StartsWith("HunterDrone");
 
-                        // Если это дрон-охотник, проверяем настройки
+                        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                         if (isHunterDronePart)
                         {
-                            // Пытаемся определить тип дрона по defName части
+                            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ defName пїЅпїЅпїЅпїЅпїЅ
                             string droneDefName = GetDroneDefNameFromPart(partParm.def.defName);
                             
-                            // Если удалось определить тип дрона, проверяем настройки
+                            // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                             if (!string.IsNullOrEmpty(droneDefName) && !HunterDroneMod.IsDroneEnabled(droneDefName))
                             {
-                                // Дрон отключен в настройках - пропускаем его
+                                // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
                                 continue;
                             }
                         }
 
                         int spawnCount = 1;
 
-                        // Определяем количество для спавна
+                        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                         if (partParm.countRange != IntRange.Invalid)
                         {
                             spawnCount = partParm.countRange.RandomInRange;
                         }
                         else
                         {
-                            // Проверяем шанс спавна
+                            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                             if (!Rand.Chance(partParm.chance))
                             {
                                 continue;
                             }
                         }
 
-                        // Определяем эффективные очки угрозы
+                        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                         float effectiveThreatPoints = threatPointsValue;
                         if (partParm.threatPointsRange != IntRange.Invalid)
                         {
                             effectiveThreatPoints = partParm.threatPointsRange.RandomInRange;
                         }
 
-                        // Спавним части
+                        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                         for (int i = 0; i < spawnCount; i++)
                         {
                             try
@@ -88,43 +88,47 @@ namespace MoreHunterDrones.Patches
                             }
                             catch (System.Exception ex)
                             {
-                                Log.Error($"[MoreHunterDrones] Ошибка при заполнении комнаты частью {partParm.def?.defName}: {ex.Message}");
+                                Log.Error($"[MoreHunterDrones] пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ {partParm.def?.defName}: {ex.Message}");
                             }
                         }
                     }
                 }
             }
 
-            // Возвращаем false, чтобы пропустить оригинальный метод
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ false, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             return false;
         }
 
-        /// Пытается определить defName дрона по названию части комнаты
-        /// <param name="partDefName">Название части комнаты</param>
-        /// <returns>DefName дрона или null, если не удалось определить</returns>
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ defName пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        /// <param name="partDefName">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ</param>
+        /// <returns>DefName пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ null, пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</returns>
         private static string GetDroneDefNameFromPart(string partDefName)
         {
             if (string.IsNullOrEmpty(partDefName))
                 return null;
 
-            // Маппинг частей комнат на типы дронов
-            // Это нужно адаптировать под ваши реальные названия частей
-            var partToDroneMapping = new Dictionary<string, string>
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+            // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+            var partToDroneMapping = new Dictionary<string, string>();
+            
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ Biotech DLC
+            if (ModsConfig.BiotechActive)
             {
-                { "HunterDroneToxic", "Drone_HunterToxic" },
-                { "HunterDroneAntigrainWarhead", "Drone_HunterAntigrainWarhead" },
-                { "HunterDroneIncendiary", "Drone_HunterIncendiary" },
-                { "HunterDroneEMP", "Drone_HunterEMP" },
-                { "HunterDroneSmoke", "Drone_HunterSmoke" }
-            };
+                partToDroneMapping.Add("HunterDroneToxic", "Drone_HunterToxic");
+            }
+            
+            partToDroneMapping.Add("HunterDroneAntigrainWarhead", "Drone_HunterAntigrainWarhead");
+            partToDroneMapping.Add("HunterDroneIncendiary", "Drone_HunterIncendiary");
+            partToDroneMapping.Add("HunterDroneEMP", "Drone_HunterEMP");
+            partToDroneMapping.Add("HunterDroneSmoke", "Drone_HunterSmoke");
 
-            // Прямое совпадение
+            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (partToDroneMapping.TryGetValue(partDefName, out string droneDefName))
             {
                 return droneDefName;
             }
 
-            // Поиск по частичному совпадению
+            // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             foreach (var mapping in partToDroneMapping)
             {
                 if (partDefName.Contains(mapping.Key) || mapping.Key.Contains(partDefName))
@@ -133,7 +137,7 @@ namespace MoreHunterDrones.Patches
                 }
             }
 
-            // Если не удалось найти точное совпадение, попробуем извлечь тип из названия
+            // пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (partDefName.StartsWith("HunterDrone"))
             {
                 string droneType = partDefName.Substring("HunterDrone".Length);

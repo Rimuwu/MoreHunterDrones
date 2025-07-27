@@ -5,6 +5,7 @@ using Verse;
 [DefOf]
 public static class DronThingDefs
 {
+    [MayRequire("Ludeon.RimWorld.Biotech")]
     public static ThingDef Drone_HunterToxic_Trap;
 
     public static ThingDef Drone_HunterAntigrainWarhead_Trap;
