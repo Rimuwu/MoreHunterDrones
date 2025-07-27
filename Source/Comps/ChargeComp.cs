@@ -23,8 +23,10 @@ namespace MoreHunterDrones.Comps
         public CompProperties_ChargeDronePack Props => (CompProperties_ChargeDronePack)props;
         public Dictionary<ThingDef, int> ChargeIngredients => Props.chargeIngredients;
 
+        // Проверка, что можно начать процесс зарядки (есть ингридиенты на карте и их достаточно)
         public bool CanStartChargeProcess(Pawn pawn)
         {
+            // Проверка, что есть ингридиенты для зарядки
             if (ChargeIngredients == null || ChargeIngredients.Count == 0)
             {
                 Log.Error("[ChargeDronePack] ChargeIngredients is null or empty");
@@ -62,7 +64,6 @@ namespace MoreHunterDrones.Comps
         {
             // Запускаем работу по сбору ингредиентов и зарядке
             var job = new Job(MyJobDefOf.ChargeDronePack, parent);
-
             bool jobStarted = pawn.jobs.TryTakeOrderedJob(job);
 
             if (!jobStarted)
@@ -71,6 +72,7 @@ namespace MoreHunterDrones.Comps
             }
         }
 
+        // Метод для завершения процесса зарядки
         public void CompleteChargeProcess(Pawn pawn)
         {
             if (ChargeIngredients == null || ChargeIngredients.Count == 0)
@@ -153,6 +155,67 @@ namespace MoreHunterDrones.Comps
             {
                 Log.Error("[ChargeDronePack] ChargedComp not found - cannot add charge");
             }
+        }
+
+        // Отображение информации в интерфейсе
+        public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
+        {
+            // Кнопка появляется только если предмет надет на пешку
+            if (parent.ParentHolder is Pawn_ApparelTracker apparelTracker)
+            {
+                var pawn = apparelTracker.pawn;
+                if (pawn?.Faction == Faction.OfPlayer)
+                {
+                    var chargedComp = parent.TryGetComp<CompApparelVerbOwner_Charged>();
+                    var command = new Command_Action
+                    {
+                        defaultLabel = "MoreHunterDrones.ChargeLabel".Translate(),
+                        defaultDesc = GetChargeDescription(),
+                        icon = ContentFinder<UnityEngine.Texture2D>.Get("UI/ChargePack", true),
+                        hotKey = KeyBindingDefOf.Misc4,
+                        action = () => TryStartChargeProcess(pawn)
+                    };
+
+                    // Проверка доступности
+                    if (chargedComp?.RemainingCharges > 0)
+                        command.Disable("MoreHunterDrones_PackAlreadyCharged".Translate());
+                    else if (!CanStartChargeProcess(pawn))
+                        command.Disable("MoreHunterDrones_CannotCollectItems".Translate());
+                    yield return command;
+                }
+            }
+        }
+
+        private void TryStartChargeProcess(Pawn pawn)
+        {
+            var chargedComp = parent.TryGetComp<CompApparelVerbOwner_Charged>();
+            if (chargedComp?.RemainingCharges > 0)
+            {
+                Messages.Message("MoreHunterDrones_PackAlreadyCharged".Translate(), MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+            if (!CanStartChargeProcess(pawn))
+            {
+                Messages.Message("MoreHunterDrones_CannotCollectItems".Translate(), MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+            StartChargeJob(pawn);
+        }
+
+        private string GetChargeDescription()
+        {
+            if (ChargeIngredients == null || ChargeIngredients.Count == 0)
+                return "No ingredients required";
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine("MoreHunterDrones_ChargePackDesc".Translate());
+            sb.AppendLine();
+            sb.AppendLine("MoreHunterDrones_ChargeIngredientsDesc".Translate());
+            foreach (var pair in ChargeIngredients)
+            {
+                if (pair.Key != null)
+                    sb.AppendLine($"• {pair.Key.LabelCap}: {pair.Value}");
+            }
+            return sb.ToString().TrimEnd();
         }
     }
 }
