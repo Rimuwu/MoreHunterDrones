@@ -155,21 +155,6 @@
         <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
         <canGoWild>false</canGoWild>
       </li>
-      <li>
-        <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
-        <label>charge pack</label>
-        <onlyManualCast>true</onlyManualCast>
-        <hasStandardCommand>true</hasStandardCommand>
-        <targetable>false</targetable>
-        <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>0</defaultCooldownTime>
-        <warmupTime>0.0</warmupTime>
-        <range>0</range>
-        <requireLineOfSight>false</requireLineOfSight>
-        <muzzleFlashScale>0</muzzleFlashScale>
-        <burstShotCount>1</burstShotCount>
-        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
-      </li>
     </verbs>
     <tradeTags>
       <li>Clothing</li>
@@ -350,21 +335,6 @@
         <soundCast>ThrowGrenade</soundCast>
         <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
         <canGoWild>false</canGoWild>
-      </li>
-      <li>
-        <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
-        <label>charge pack</label>
-        <onlyManualCast>true</onlyManualCast>
-        <hasStandardCommand>true</hasStandardCommand>
-        <targetable>false</targetable>
-        <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>0</defaultCooldownTime>
-        <warmupTime>0.0</warmupTime>
-        <range>0</range>
-        <requireLineOfSight>false</requireLineOfSight>
-        <muzzleFlashScale>0</muzzleFlashScale>
-        <burstShotCount>1</burstShotCount>
-        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
       </li>
     </verbs>
     <tradeTags>
@@ -547,21 +517,6 @@
         <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
         <canGoWild>false</canGoWild>
       </li>
-      <li>
-        <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
-        <label>charge pack</label>
-        <onlyManualCast>true</onlyManualCast>
-        <hasStandardCommand>true</hasStandardCommand>
-        <targetable>false</targetable>
-        <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>0</defaultCooldownTime>
-        <warmupTime>0.0</warmupTime>
-        <range>0</range>
-        <requireLineOfSight>false</requireLineOfSight>
-        <muzzleFlashScale>0</muzzleFlashScale>
-        <burstShotCount>1</burstShotCount>
-        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
-      </li>
     </verbs>
     <tradeTags>
       <li>Clothing</li>
@@ -739,21 +694,6 @@
         <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
         <canGoWild>false</canGoWild>
       </li>
-      <li>
-        <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
-        <label>charge pack</label>
-        <onlyManualCast>true</onlyManualCast>
-        <hasStandardCommand>true</hasStandardCommand>
-        <targetable>false</targetable>
-        <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>0</defaultCooldownTime>
-        <warmupTime>0.0</warmupTime>
-        <range>0</range>
-        <requireLineOfSight>false</requireLineOfSight>
-        <muzzleFlashScale>0</muzzleFlashScale>
-        <burstShotCount>1</burstShotCount>
-        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
-      </li>
     </verbs>
     <tradeTags>
       <li>Clothing</li>
@@ -930,21 +870,6 @@
         <soundCast>ThrowGrenade</soundCast>
         <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
         <canGoWild>false</canGoWild>
-      </li>
-      <li>
-        <verbClass>MoreHunterDrones.Verbs.Verb_ChargeDronePack</verbClass>
-        <label>charge pack</label>
-        <onlyManualCast>true</onlyManualCast>
-        <hasStandardCommand>true</hasStandardCommand>
-        <targetable>false</targetable>
-        <commandIcon>UI/ChargePack</commandIcon>
-        <defaultCooldownTime>0</defaultCooldownTime>
-        <warmupTime>0.0</warmupTime>
-        <range>0</range>
-        <requireLineOfSight>false</requireLineOfSight>
-        <muzzleFlashScale>0</muzzleFlashScale>
-        <burstShotCount>1</burstShotCount>
-        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
       </li>
     </verbs>
     <tradeTags>
