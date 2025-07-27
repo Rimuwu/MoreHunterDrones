@@ -136,7 +136,7 @@
       </li>
     </comps>
     <verbs>
-      <li>
+     <li>
         <verbClass>MoreHunterDrones.Verbs.Verb_LaunchDrone</verbClass>
         <label>deploy hunter trap drone</label>
         <defaultProjectile>Grenade_HunterPackToxic</defaultProjectile>
