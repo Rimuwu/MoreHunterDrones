@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Verse;
-using MoreHunterDrones.Verbs;
 
 namespace MoreHunterDrones.Comps
 {
@@ -26,56 +25,23 @@ namespace MoreHunterDrones.Comps
 
         public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
         {
-            // Показываем ВСЕ кнопки вербов - пусть каждый верб сам решает через Available()
+            // Показываем только кнопки вербов запуска дронов (не зарядки)
             foreach (Gizmo item in base.CompGetWornGizmosExtra())
             {
-
                 if (item is Command_VerbTarget verbCommand)
                 {
-                    // Если это кнопка верба зарядки, добавляем информацию об ингредиентах
-                    if (verbCommand.verb is Verb_ChargeDronePack chargeVerb)
+                    // Пропускаем кнопку зарядки - она теперь управляется CompChargeDronePack
+                    // Verb_ChargeDronePack больше не используется
+                    // Оставляем только Verb_LaunchDrone
+                    // Если это кнопка запуска, проверяем заряды
+                    if (verbCommand.verb.GetType().Name == "Verb_LaunchDrone")
                     {
-                        // Получаем компонент зарядки для информации об ингредиентах
-                        var chargeComp = parent.TryGetComp<CompChargeDronePack>();
-                        if (chargeComp?.ChargeIngredients != null && chargeComp.ChargeIngredients.Count > 0)
+                        if (RemainingCharges <= 0)
                         {
-                            // Добавляем описание ингредиентов к существующему tooltip
-                            try
-                            {
-                                string originalDesc = "MoreHunterDrones_VerbChargeDesc".Translate(Props?.chargeNoun);
-                                string ingredientsDesc = GetIngredientsDescription(chargeComp);
 
-                                verbCommand.defaultDesc = string.IsNullOrEmpty(originalDesc)
-                                    ? ingredientsDesc
-                                    : originalDesc + "\n" + ingredientsDesc;
+                            verbCommand.Disable();
+                            verbCommand.disabledReason = "MoreHunterDrones_NoCharged".Translate(Props?.chargeNoun);
 
-                                if (RemainingCharges > 0)
-                                {
-                                    verbCommand.Disable();
-                                    verbCommand.disabledReason = "MoreHunterDrones_IsCharged".Translate(Props?.chargeNoun);
-                                }
-                            }
-                            catch (System.Exception ex)
-                            {
-                                Log.Warning($"[MoreHunterDrones] Error setting charge verb desc: {ex.Message}");
-                            }
-                        }
-                    }
-                    else if (verbCommand.verb is Verb_LaunchDrone launcVerb) // Исправлено: добавлен else
-                    {
-                        if (RemainingCharges <= 0) // Исправлено: <= вместо <
-                        {
-                            try
-                            {
-                                verbCommand.Disable();
-                                verbCommand.disabledReason = "MoreHunterDrones_NoCharged".Translate(Props?.chargeNoun);
-                            }
-                            catch (System.Exception ex)
-                            {
-                                Log.Warning($"[MoreHunterDrones] Error setting launch verb reason: {ex.Message}");
-                                verbCommand.Disable();
-                                verbCommand.disabledReason = "No charges remaining";
-                            }
                         }
                     }
                 }
@@ -94,36 +60,6 @@ namespace MoreHunterDrones.Comps
                 };
                 yield return command_Action;
             }
-        }
-
-        private string GetIngredientsDescription(CompChargeDronePack chargeComp)
-        {
-            if (chargeComp?.ChargeIngredients == null)
-            {
-                return "No ingredients defined";
-            }
-
-            var sb = new StringBuilder();
-            try
-            {
-                string add_text = "MoreHunterDrones_ChargeIngredientsDesc".Translate(Props?.chargeNoun);
-                sb.AppendLine(add_text);
-            }
-            catch (System.Exception ex)
-            {
-                Log.Warning($"[MoreHunterDrones] Error translating ingredients desc: {ex.Message}");
-                sb.AppendLine("Required ingredients:");
-            }
-            
-            foreach (var pair in chargeComp.ChargeIngredients)
-            {
-                if (pair.Key != null)
-                {
-                    sb.AppendLine($"• {pair.Key.LabelCap}: {pair.Value}");
-                }
-            }
-            
-            return sb.ToString().TrimEnd();
         }
 
         public void AddCharge(int amount = 1)
