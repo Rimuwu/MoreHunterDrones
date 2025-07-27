@@ -9,7 +9,6 @@
   </Operation>
 
 
-
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/comps</xpath>
     <value>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <PawnKindDef ParentName="BaseDroneKind">
+  <PawnKindDef ParentName="BaseDroneKind" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>Drone_HunterToxic</defName>
     <label>toxic hunter drone</label>
     <labelPlural>toxic hunter drones</labelPlural>

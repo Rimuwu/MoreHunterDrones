@@ -3,6 +3,7 @@ using Verse;
 
 namespace MoreHunterDrones.Buildings
 {
+
     public class Building_TrapReleaseHunter_Toxic : Building_TrapReleaseEntity
     {
         protected override int CountToSpawn => 1;

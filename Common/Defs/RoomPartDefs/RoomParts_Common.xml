@@ -4,7 +4,15 @@
   <RoomPart_ThingDef>
     <defName>HunterDroneToxic</defName>
     <workerClass>RoomPart_CornerThing</workerClass>
-    <thingDef>Drone_HunterToxic_Trap</thingDef>
+    <thingDef>
+      <li Class="IfModActive">
+        <modName>Ludeon.RimWorld.Biotech</modName>
+        <value>Drone_HunterToxic_Trap</value>
+      </li>
+      <li Class="Else">
+        <value>DroneHunterTrap</value>
+      </li>
+    </thingDef>
   </RoomPart_ThingDef>
 
   <RoomPart_ThingDef>

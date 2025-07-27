@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   
-  <ThingDef ParentName="ApparelNoQualityBase">
+  <ThingDef ParentName="ApparelNoQualityBase" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>Apparel_PackHunter_Toxic</defName>
     <label>hunter toxic pack</label>
     <description>A wearable pack that deploys a toxic hunter drone. The drone will close with the target and release a toxic gas when it is within range.</description>
@@ -25,10 +25,11 @@
       <li>RewardStandardLowFreq</li>
     </thingSetMakerTags>
     <costList>
-      <Steel>70</Steel>
+      <Steel>30</Steel>
       <Chemfuel>50</Chemfuel>
       <Uranium>10</Uranium>
       <ComponentIndustrial>2</ComponentIndustrial>
+      <Shell_Toxic>2</Shell_Toxic>
     </costList>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedPack</unfinishedThingDef>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef ParentName="BuildingBase" MayRequire="Ludeon.RimWorld.Biotech">
     <defName>Drone_HunterToxic_Trap</defName>
     <label>toxic hunter trap</label>
     <description>A dormant toxic hunter drone that activates when it detects a threat. The toxic hunter drone closes with the target and detonates, releasing a cloud of toxic gas. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps.</description>
