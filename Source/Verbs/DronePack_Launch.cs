@@ -1,5 +1,6 @@
 ﻿// Assembly-CSharp, Version=1.6.9323.2541, Culture=neutral, PublicKeyToken=null
 // Verse.Verb_LaunchProjectileStaticOneUse
+using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -8,9 +9,10 @@ using Verse.AI;
 
 namespace MoreHunterDrones.Verbs
 {
+
     public class Verb_LaunchDrone : Verb_LaunchProjectileStatic
     {
-        CompApparelVerbOwner_Charged CompApparelVerbOwner => (CompApparelVerbOwner_Charged)base.EquipmentSource.TryGetComp<CompApparelVerbOwner_Charged>();
+        CompApparelVerbOwner_Charged CompApparelVerbOwner => base.EquipmentSource.TryGetComp<CompApparelVerbOwner_Charged>();
 
         public override bool Available()
         {
