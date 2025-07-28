@@ -51,8 +51,7 @@ namespace MoreHunterDrones.Patches
                             // ���� ������� ���������� ��� �����, ��������� ���������
                             if (!string.IsNullOrEmpty(droneDefName) && !HunterDroneMod.IsDroneEnabled(droneDefName))
                             {
-                                // ���� �������� � ���������� - ���������� ���
-                                continue;
+                                partParm.def = DefDatabase<RoomPartDef>.GetNamed("HunterDrone", true);
                             }
                         }
 
