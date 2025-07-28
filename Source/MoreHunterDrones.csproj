@@ -73,6 +73,8 @@
     <Compile Include="ThingDef\DronThingDefs.cs" />
     <Compile Include="Verbs\DronePack_Launch.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Graphic\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
