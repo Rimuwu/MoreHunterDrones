@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PawnKindDef[defName="Drone_Hunter"]/lifeStages/li/bodyGraphicData/texPath</xpath>
+    <value>
+      <texPath>Pawns/Drone_Hunter/hd</texPath>
+    </value>
+  </Operation>
+
+</Patch>
